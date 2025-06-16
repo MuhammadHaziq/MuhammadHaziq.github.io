@@ -21,6 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Replace dynamic email placeholders
+        run: |
+          # Replace email placeholder with actual email from repository variables
+          EMAIL="${{ vars.CONTACT_EMAIL }}"
+          
+          # Update README.md
+          sed -i "s/DYNAMIC_EMAIL_PLACEHOLDER/$EMAIL/g" README.md
+          
+          # Update Contact component
+          sed -i "s/DYNAMIC_EMAIL_PLACEHOLDER/$EMAIL/g" components/contact.tsx
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
