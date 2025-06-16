@@ -45,7 +45,7 @@ export const experiencesData = [
     title: "Senior Full Stack Developer",
     location: "Pakistan, Lahore",
     description:
-      "I’m a Senior Software Engineer at Nextbridge with full-stack expertise in Node.js, Express.js, Nest.js, React.js, and Angular CLI. I’m proficient in TypeScript, Redux.js, MongoDB, and MariaDB, with a strong command of Git, Sass, and Tailwind CSS. I focus on building scalable, maintainable solutions and stay updated with modern web development trends to deliver impactful projects.",
+      "I'm a Senior Software Engineer at Nextbridge with full-stack expertise in Node.js, Express.js, Nest.js, React.js, and Angular CLI. I'm proficient in TypeScript, Redux.js, MongoDB, and MariaDB, with a strong command of Git, Sass, and Tailwind CSS. I focus on building scalable, maintainable solutions and stay updated with modern web development trends to deliver impactful projects.",
     icon: React.createElement(FaNodeJs),
     date: "2021 - 2023",
   },
@@ -53,7 +53,7 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     location: "Pakistan, Lahore",
     description:
-      "As a Senior Software Engineer at Ecologix, I specialize in Node.js, Express.js, Vue.js, and React.js with strong skills in Redux, Git, Sass, and Tailwind CSS. I’ve led projects, managed MongoDB and Oracle databases, and delivered scalable solutions. With a passion for innovation, I continuously explore new technologies to drive impactful, cutting-edge web application development.",
+      "As a Senior Software Engineer at Ecologix, I specialize in Node.js, Express.js, Vue.js, and React.js with strong skills in Redux, Git, Sass, and Tailwind CSS. I've led projects, managed MongoDB and Oracle databases, and delivered scalable solutions. With a passion for innovation, I continuously explore new technologies to drive impactful, cutting-edge web application development.",
     icon: React.createElement(FaReact),
     date: "20218 - 2021",
   },
@@ -65,7 +65,7 @@ export const projectsData = [
     link: "https://insurancemarket.ae/",
     description:
       "Worked as Senior Backend Developer on InsuranceMarket.ae, integrating checkout and Tappay payment gateways, optimizing code, refactoring logic, and resolving complex promises and race conditions.",
-    tags: ["Cursor AI", "Claude AI", "Gemini", "Sonarqubecloud", "Node", "Express", "Typescript", "MySQL", "Payment Gateway"],
+    tags: ["Node", "Express", "Typescript", "MySQL", "Payment Gateway", "Cursor AI", "Claude AI", "Gemini", "SonarQube"],
     imageUrl: insuanceMarket,
   },
   {
@@ -73,7 +73,7 @@ export const projectsData = [
     link: "https://financethat.ca",
     description:
       "Lead front-end for a vehicle listing platform, built UI components, integrated Stripe for ad boosting, and used Flinks for identity verification and credit reports. Currently running in Canda and US market.",
-    tags: ["React", "Redux", "Postgres", "Scss", "Phython", "Django"],
+    tags: ["Python", "Django", "PostgreSQL", "React", "Redux", "Scss"],
     imageUrl: financeThat,
   },
   {
@@ -81,7 +81,7 @@ export const projectsData = [
     link: "https://laptopzoneusa.com",
     description:
       "This is Selling and Repairing Website for Laptops and Mobile Phones. Currently running in US market.",
-    tags: ["React", "Redux", "Node.js", "Css", "Orcale", "Express"],
+    tags: ["Node.js", "Express", "Oracle", "React", "Redux", "CSS"],
     imageUrl: laptopzone,
   },
   {
@@ -89,30 +89,51 @@ export const projectsData = [
     link: "https://dashboard.kyriopos.com/#/summary",
     description:
       "Developed a Loyverse POS clone as Full-Stack Developer using React, Redux, and Express. Managed user roles, sales reports, and filtered data using Mongoose relationships. Currently running in UK market.",
-    tags: ["React", "scss", "Graphs", "Node.js", "Express", "MongoDB"],
+    tags: ["Node.js", "Express", "MongoDB", "React", "Redux", "Scss", "Graphs"],
     imageUrl: kyrioPos,
   },
 ] as const;
 
 export const skillsData = [
+  // Backend Technologies
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Express",
+  "Nest.js",
+  
+  // Database Technologies
+  "MongoDB",
+  "PostgreSQL",
+  "MySQL",
+  "Oracle",
+  "Sequelize ORM",
+  
+  // Frontend Technologies
+  "React",
+  "Next.js",
+  "Redux",
+  "Vue.js",
+  "Angular Cli",
+  "HTML",
+  "CSS",
+  "Sass",
+  "Tailwind",
+  
+  // Tools & DevOps
+  "Git",
+  "Docker",
+  "CICD",
   "Cursor AI",
   "Claude AI",
   "ChatGPT",
   "Gemini",
-  "Sonarqubecloud",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Redux",
-  "Next.js",
-  "Tailwind",
-  "Node.js",
-  "Express",
-  "Nest.js",
-  "Git",
   "Github Copilot",
-  "MongoDB",
-  "PostgreSQL",
-  "Docker",
-  "CICD",
+  "SonarQube",
+  "Swagger",
+  "Axiom",
+  "Papertrail",
+  "Doppler",
+  "New Relic",
+  "Sentry",
 ] as const;
