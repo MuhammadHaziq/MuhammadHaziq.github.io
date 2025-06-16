@@ -17,36 +17,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Replace dynamic email placeholders
-        run: |
-          # Replace email placeholder with actual email from repository variables
-          EMAIL="${{ vars.CONTACT_EMAIL || 'muhammadhaziq341@gmail.com' }}"
-          
-          echo "Using email: $EMAIL"
-          echo "Repository variable CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}"
-          
-          # Check if files exist before replacement
-          if [ -f "README.md" ]; then
-            echo "README.md exists, replacing placeholders..."
-            sed -i "s/DYNAMIC_EMAIL_PLACEHOLDER/$EMAIL/g" README.md
-            echo "README.md after replacement:"
-            grep -n "DYNAMIC_EMAIL_PLACEHOLDER\|$EMAIL" README.md || echo "No email found in README.md"
-          else
-            echo "README.md not found!"
-          fi
-          
-          if [ -f "components/contact.tsx" ]; then
-            echo "contact.tsx exists, replacing placeholders..."
-            sed -i "s/DYNAMIC_EMAIL_PLACEHOLDER/$EMAIL/g" components/contact.tsx
-            echo "contact.tsx after replacement:"
-            grep -n "DYNAMIC_EMAIL_PLACEHOLDER\|$EMAIL" components/contact.tsx || echo "No email found in contact.tsx"
-          else
-            echo "components/contact.tsx not found!"
-          fi
 
       - name: Detect package manager
         id: detect-package-manager
@@ -82,6 +57,8 @@ jobs:
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
 
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll

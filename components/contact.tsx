@@ -10,6 +10,9 @@ import { MotionSection } from "./Motion/MotionSectionWrapper";
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Get email from environment variable
+  const contactEmail = process.env.CONTACT_EMAIL || 'muhammadhaziq341@gmail.com';
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,7 +34,7 @@ export default function Contact() {
       // You can replace this with EmailJS, Formspree, or another service
       const subject = "Contact Form Message";
       const body = `From: ${senderEmail}\n\nMessage:\n${message}`;
-      const mailtoLink = `mailto:DYNAMIC_EMAIL_PLACEHOLDER?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
       window.open(mailtoLink);
       toast.success("Email client opened! Please send the email.");
@@ -67,8 +70,8 @@ export default function Contact() {
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:DYNAMIC_EMAIL_PLACEHOLDER">
-          DYNAMIC_EMAIL_PLACEHOLDER
+        <a className="underline" href={`mailto:${contactEmail}`}>
+          {contactEmail}
         </a>{" "}
         or through this form.
       </p>
