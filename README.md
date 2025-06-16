@@ -2,7 +2,7 @@
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen)](https://muhammadhaziq.github.io)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/muhammadhaziq)
-[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:test@example.com)
+[![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:DYNAMIC_EMAIL_PLACEHOLDER)
 
 > **Senior Full Stack Developer** with **7+ years** of JavaScript expertise, specializing in modern web technologies and scalable solutions.
 
@@ -175,7 +175,7 @@ This portfolio is built with modern technologies:
 
 I'm always interested in discussing new opportunities and innovative projects!
 
-- 📧 **Email**: [test@example.com](mailto:test@example.com)
+- 📧 **Email**: [DYNAMIC_EMAIL_PLACEHOLDER](mailto:DYNAMIC_EMAIL_PLACEHOLDER)
 - 💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/muhammadhaziq)
 - 🌐 **Portfolio**: [muhammadhaziq.github.io](https://muhammadhaziq.github.io)
 

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Get email from environment variable or use default
-const contactEmail = process.env.CONTACT_EMAIL || 'muhammadhaziq341@gmail.com';
+const contactEmail = process.env.CONTACT_EMAIL;
 
 console.log(`Replacing email placeholders with: ${contactEmail}`);
 
