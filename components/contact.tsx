@@ -1,15 +1,49 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import { MotionSection } from "./Motion/MotionSectionWrapper";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const senderEmail = formData.get("senderEmail") as string;
+    const message = formData.get("message") as string;
+
+    // Basic validation
+    if (!senderEmail || !message) {
+      toast.error("Please fill in all fields");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // For now, we'll create a mailto link as a fallback
+      // You can replace this with EmailJS, Formspree, or another service
+      const subject = "Contact Form Message";
+      const body = `From: ${senderEmail}\n\nMessage:\n${message}`;
+      const mailtoLink = `mailto:muhammadhaziq341@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.open(mailtoLink);
+      toast.success("Email client opened! Please send the email.");
+      
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <MotionSection
@@ -41,16 +75,7 @@ export default function Contact() {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -59,6 +84,7 @@ export default function Contact() {
           required
           maxLength={500}
           placeholder="Your email"
+          disabled={isSubmitting}
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -66,8 +92,9 @@ export default function Contact() {
           placeholder="Your message"
           required
           maxLength={5000}
+          disabled={isSubmitting}
         />
-        <SubmitBtn />
+        <SubmitBtn pending={isSubmitting} />
       </form>
     </MotionSection>
   );
