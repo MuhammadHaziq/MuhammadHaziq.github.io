@@ -20,33 +20,43 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
         After graduating with a degree in{" "}
-        <span className="font-medium">Information Technolgy</span>, I decided to
-        pursue my passion for programming.{" "}
+        <span className="font-medium">Information Technology</span>, I have been
+        passionate about programming for over{" "}
+        <span className="font-medium">7 years</span>. Throughout my career, I've
+        developed numerous applications using{" "}
+        <span className="font-medium">JavaScript</span> as my core language.{" "}
         <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, Next js, NoSQL and SQL
-        </span>
-        . I am also familiar with TypeScript. I am always looking to learn new
-        technologies.
-        {/* I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer. */}
+        problem-solving aspect and building scalable solutions that make a real
+        impact.
       </p>
       <p className="mb-3">
-        I have experience working with{" "}
-        <span className="font-medium">agile methodologies</span>. I have worked
-        on a variety of projects, from small websites to large web applications.
-        I have experience working with both front-end and back-end technologies.
-        I am always looking to improve my skills and learn new things.
+        My expertise spans across the full stack with{" "}
+        <span className="font-medium">
+          React, Next.js, Node.js, and Nest.js
+        </span>
+        . I have extensive experience working with various databases including{" "}
+        <span className="font-medium">
+          MongoDB, MySQL, Oracle, and Sequelize ORM
+        </span>
+        . For the past{" "}
+        <span className="font-medium">3 years</span>, I've been working
+        extensively with{" "}
+        <span className="font-medium">TypeScript</span>, which has significantly
+        improved my development workflow and code quality.
+      </p>
+      <p className="mb-3">
+        I have hands-on experience with modern development practices including{" "}
+        <span className="font-medium">Docker containerization</span> and{" "}
+        <span className="font-medium">CI/CD pipelines</span>. I stay current
+        with the latest technologies and have been leveraging{" "}
+        <span className="font-medium">AI tools like Cursor and Claude 4</span>{" "}
+        to enhance my development productivity and code quality.
       </p>
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">Devops (Docker, CICD)</span>.
+        <span className="italic">When I'm not coding</span>, I enjoy exploring
+        new technologies. I believe in
+        continuous learning and am always excited to take on new challenges that
+        push the boundaries of what's possible with modern web development.
       </p>
     </MotionSection>
   );

@@ -1,7 +1,5 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
+import { FaReact, FaNodeJs } from "react-icons/fa";
 import financeThat from "@/public/financeThat.jpeg";
 import laptopzone from "@/public/laptopzone.jpeg";
 import kyrioPos from "@/public/kyriopos.jpeg";
@@ -40,7 +38,7 @@ export const experiencesData = [
     location: "UAE, Dubai",
     description:
       "Working with TypeScript and Sequelize ORM with MySQL, currently I am working on fintech modules. I write Postman test cases and integrate payment gateways, including Apple Pay, checkout, TAP in an insurance project. I also develop cron jobs to fetch data from third-party APIs. As a senior developer, I focus on code refactoring and optimization to enhance application performance.",
-    icon: React.createElement(LuGraduationCap),
+    icon: React.createElement(FaNodeJs),
     date: "2023 - present",
   },
   {
@@ -48,7 +46,7 @@ export const experiencesData = [
     location: "Pakistan, Lahore",
     description:
       "I’m a Senior Software Engineer at Nextbridge with full-stack expertise in Node.js, Express.js, Nest.js, React.js, and Angular CLI. I’m proficient in TypeScript, Redux.js, MongoDB, and MariaDB, with a strong command of Git, Sass, and Tailwind CSS. I focus on building scalable, maintainable solutions and stay updated with modern web development trends to deliver impactful projects.",
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaNodeJs),
     date: "2021 - 2023",
   },
   {
@@ -67,7 +65,7 @@ export const projectsData = [
     link: "https://insurancemarket.ae/",
     description:
       "Worked as Senior Backend Developer on InsuranceMarket.ae, integrating checkout and Tappay payment gateways, optimizing code, refactoring logic, and resolving complex promises and race conditions.",
-    tags: ["Node", "Express", "Typescript", "MySQL", "Payment Gateway"],
+    tags: ["Cursor AI", "Claude AI", "Gemini", "Sonarqubecloud", "Node", "Express", "Typescript", "MySQL", "Payment Gateway"],
     imageUrl: insuanceMarket,
   },
   {
@@ -97,6 +95,11 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
+  "Cursor AI",
+  "Claude AI",
+  "ChatGPT",
+  "Gemini",
+  "Sonarqubecloud",
   "JavaScript",
   "TypeScript",
   "React",
@@ -107,6 +110,7 @@ export const skillsData = [
   "Express",
   "Nest.js",
   "Git",
+  "Github Copilot",
   "MongoDB",
   "PostgreSQL",
   "Docker",
