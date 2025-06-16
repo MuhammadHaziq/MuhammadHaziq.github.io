@@ -1,0 +1,22 @@
+name: Test Email Variable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test repository variable
+        run: |
+          echo "Testing repository variable..."
+          echo "CONTACT_EMAIL variable: '${{ vars.CONTACT_EMAIL }}'"
+          EMAIL="${{ vars.CONTACT_EMAIL }}"
+          echo "Final email to use: '$EMAIL'"
+          
+          if [ -z "$EMAIL" ]; then
+            echo "❌ Email is empty!"
+            exit 1
+          else
+            echo "✅ Email is set: $EMAIL"
+          fi 
