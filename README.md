@@ -175,7 +175,7 @@ This portfolio is built with modern technologies:
 
 I'm always interested in discussing new opportunities and innovative projects!
 
-- 📧 **Email**: [DYNAMIC_EMAIL_PLACEHOLDER](mailto:DYNAMIC_EMAIL_PLACEHOLDER)
+- 📧 **Email**: [Muhammad Haziq](mailto:DYNAMIC_EMAIL_PLACEHOLDER)
 - 💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/muhammadhaziq)
 - 🌐 **Portfolio**: [muhammadhaziq.github.io](https://muhammadhaziq.github.io)
 

@@ -23,6 +23,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Replace email placeholders
+        run: |
+          EMAIL="${{ vars.CONTACT_EMAIL || 'muhammadhaziq341@gmail.com' }}"
+          echo "=== Environment Variable Debug Info ==="
+          echo "CONTACT_EMAIL from vars: ${{ vars.CONTACT_EMAIL }}"
+          echo "Final email to use: $EMAIL"
+          
+          echo "=== Replacing email placeholders ==="
+          # Replace in README.md
+          if [ -f "README.md" ]; then
+            echo "Processing README.md..."
+            PLACEHOLDER_COUNT=$(grep -o "DYNAMIC_EMAIL_PLACEHOLDER" README.md | wc -l)
+            echo "Found $PLACEHOLDER_COUNT placeholder(s) in README.md"
+            
+            sed -i "s/DYNAMIC_EMAIL_PLACEHOLDER/$EMAIL/g" README.md
+            
+            REMAINING_COUNT=$(grep -o "DYNAMIC_EMAIL_PLACEHOLDER" README.md | wc -l || echo "0")
+            EMAIL_COUNT=$(grep -o "$EMAIL" README.md | wc -l || echo "0")
+            echo "Remaining placeholders: $REMAINING_COUNT"
+            echo "Email occurrences after replacement: $EMAIL_COUNT"
+            echo "✅ README.md processed successfully"
+          else
+            echo "❌ README.md not found"
+          fi
+          
+          echo "=== Email replacement completed ==="
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
