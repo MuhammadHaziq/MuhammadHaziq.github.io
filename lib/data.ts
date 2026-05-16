@@ -34,106 +34,175 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Senior Full Stack Developer",
-    location: "UAE, Dubai",
+    title: "Senior Software Engineer (Full-Stack / Node.js)",
+    location: "Dubai, UAE — InsuranceMarket.ae",
     description:
-      "Working with TypeScript and Sequelize ORM with MySQL, currently I am working on fintech modules. I write Postman test cases and integrate payment gateways, including Apple Pay, checkout, TAP in an insurance project. I also develop cron jobs to fetch data from third-party APIs. As a senior developer, I focus on code refactoring and optimization to enhance application performance.",
+      "Leading backend engineering for the UAE's largest digital insurance platform. Architecting fintech modules with TypeScript, NestJS, and Sequelize ORM on MySQL. Integrated multi-gateway payment systems including Apple Pay, Checkout.com, and TAP for secure policy transactions. Built cron jobs for third-party API integrations, wrote comprehensive Postman test suites, and led code refactoring initiatives to optimize application performance and resolve complex race conditions in async payment flows.",
     icon: React.createElement(FaNodeJs),
-    date: "2023 - present",
+    date: "2023 - Present",
   },
   {
-    title: "Senior Full Stack Developer",
-    location: "Pakistan, Lahore",
+    title: "Senior Software Engineer",
+    location: "Lahore, Pakistan — Nextbridge (Remote: Canada & US Clients)",
     description:
-      "I'm a Senior Software Engineer at Nextbridge with full-stack expertise in Node.js, Express.js, Nest.js, React.js, and Angular CLI. I'm proficient in TypeScript, Redux.js, MongoDB, and MariaDB, with a strong command of Git, Sass, and Tailwind CSS. I focus on building scalable, maintainable solutions and stay updated with modern web development trends to deliver impactful projects.",
+      "Lead Developer for FinanceThat (Canada & US) — a vehicle financing platform integrated with Stripe and Flinks. Architected scalable e-commerce and financial platforms with full-stack expertise in Node.js, Express.js, NestJS, React.js, and Angular CLI. Managed complex application state with Redux.js, implemented robust testing strategies using Jest, Chai, and Mocha. Strong proficiency in TypeScript, MongoDB, and MariaDB while delivering maintainable, scalable solutions for distributed remote teams.",
     icon: React.createElement(FaNodeJs),
     date: "2021 - 2023",
   },
   {
     title: "Full-Stack Developer",
-    location: "Pakistan, Lahore",
+    location: "Lahore, Pakistan — Ecologix",
     description:
-      "As a Senior Software Engineer at Ecologix, I specialize in Node.js, Express.js, Vue.js, and React.js with strong skills in Redux, Git, Sass, and Tailwind CSS. I've led projects, managed MongoDB and Oracle databases, and delivered scalable solutions. With a passion for innovation, I continuously explore new technologies to drive impactful, cutting-edge web application development.",
+      "Built production applications using Node.js, Express.js, Vue.js, and React.js with strong skills in Redux, Git, Sass, and Tailwind CSS. Led project deliveries, managed MongoDB and Oracle databases, and built scalable web applications including LaptopZone USA (e-commerce) and Kyrio POS (UK retail point-of-sale system). Drove technical decisions, code reviews, and continuous exploration of new technologies for impactful, cutting-edge web development.",
     icon: React.createElement(FaReact),
-    date: "20218 - 2021",
+    date: "2018 - 2021",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "InsuranceMarket",
+    title: "InsuranceMarket.ae — UAE's Leading Insurance Platform",
     link: "https://insurancemarket.ae/",
     description:
-      "Worked as Senior Backend Developer on InsuranceMarket.ae, integrating checkout and Tappay payment gateways, optimizing code, refactoring logic, and resolving complex promises and race conditions.",
-    tags: ["Node", "Express", "Typescript", "MySQL", "Payment Gateway", "Cursor AI", "Claude AI", "Gemini", "SonarQube"],
+      "Senior Backend Engineer on UAE's #1 digital insurance platform. Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations and led code quality initiatives.",
+    tags: [
+      "Node.js",
+      "NestJS",
+      "TypeScript",
+      "MySQL",
+      "Sequelize",
+      "Apple Pay",
+      "Checkout.com",
+      "TAP",
+      "Cursor AI",
+      "SonarQube",
+    ],
     imageUrl: insuanceMarket,
   },
   {
-    title: "FinanceThat",
+    title: "FinanceThat.ca — Vehicle Financing Platform (Canada & US)",
     link: "https://financethat.ca",
     description:
-      "Lead front-end for a vehicle listing platform, built UI components, integrated Stripe for ad boosting, and used Flinks for identity verification and credit reports. Currently running in Canda and US market.",
-    tags: ["Python", "Django", "PostgreSQL", "React", "Redux", "Scss"],
+      "Lead Developer architecting a vehicle financing and listing platform serving Canadian and US markets. Integrated Stripe for ad boosting and subscription payments, plus Flinks for KYC, identity verification, and credit report fetching. Built reusable UI components, managed complex state with Redux, and led a distributed remote team across multiple timezones.",
+    tags: [
+      "React",
+      "Redux",
+      "Node.js",
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Stripe",
+      "Flinks",
+      "Scss",
+    ],
     imageUrl: financeThat,
   },
   {
-    title: "Laptopzone",
+    title: "LaptopZone USA — E-Commerce Platform",
     link: "https://laptopzoneusa.com",
     description:
-      "This is Selling and Repairing Website for Laptops and Mobile Phones. Currently running in US market.",
+      "High-conversion e-commerce platform built for the US market specializing in laptop sales and repairs. Implemented optimized checkout flows, inventory management, order tracking, and customer service modules. Designed scalable backend architecture with Oracle database and built responsive React frontend for seamless shopping experiences.",
     tags: ["Node.js", "Express", "Oracle", "React", "Redux", "CSS"],
     imageUrl: laptopzone,
   },
   {
-    title: "Kyrio POS",
+    title: "Kyrio POS — UK Retail Point-of-Sale System",
     link: "https://dashboard.kyriopos.com/#/summary",
     description:
-      "Developed a Loyverse POS clone as Full-Stack Developer using React, Redux, and Express. Managed user roles, sales reports, and filtered data using Mongoose relationships. Currently running in UK market.",
-    tags: ["Node.js", "Express", "MongoDB", "React", "Redux", "Scss", "Graphs"],
+      "Full-Stack Developer on a Loyverse POS-inspired system for UK retail clients. Built role-based access control for managers, cashiers, and admins. Implemented real-time sales reports, inventory tracking, customer dashboards, and graph-based analytics. Managed complex MongoDB relationships with Mongoose for filtered reporting and offline-first capabilities.",
+    tags: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "React",
+      "Redux",
+      "Scss",
+      "Analytics",
+    ],
     imageUrl: kyrioPos,
   },
 ] as const;
 
 export const skillsData = [
-  // Backend Technologies
-  "JavaScript",
-  "TypeScript",
+  // Core Backend
   "Node.js",
-  "Express",
-  "Nest.js",
-  
-  // Database Technologies
+  "NestJS",
+  "Express.js",
+  "TypeScript",
+  "JavaScript",
+
+  // APIs & Architecture
+  "REST APIs",
+  "GraphQL",
+  "Microservices",
+  "JWT",
+  "OAuth2",
+  "WebSockets",
+
+  // Frontend
+  "React.js",
+  "Next.js",
+  "Redux",
+  "Vue.js",
+  "Angular",
+  "HTML5",
+  "CSS3",
+  "Sass",
+  "Tailwind CSS",
+
+  // Databases
   "MongoDB",
   "PostgreSQL",
   "MySQL",
   "Oracle",
+  "Redis",
   "Sequelize ORM",
-  
-  // Frontend Technologies
-  "React",
-  "Next.js",
-  "Redux",
-  "Vue.js",
-  "Angular Cli",
-  "HTML",
-  "CSS",
-  "Sass",
-  "Tailwind",
-  
-  // Tools & DevOps
-  "Git",
+  "Mongoose",
+
+  // Payments / Fintech
+  "Stripe",
+  "Apple Pay",
+  "Checkout.com",
+  "TAP Payments",
+  "Flinks",
+
+  // DevOps & Cloud
   "Docker",
-  "CICD",
-  "Cursor AI",
-  "Claude AI",
-  "ChatGPT",
-  "Gemini",
-  "Github Copilot",
-  "SonarQube",
-  "Swagger",
+  "CI/CD",
+  "GitHub Actions",
+  "AWS",
+  "Nginx",
+  "Linux",
+
+  // Testing
+  "Jest",
+  "Mocha",
+  "Chai",
+  "TDD",
+
+  // Monitoring & Observability
+  "New Relic",
+  "Sentry",
   "Axiom",
   "Papertrail",
   "Doppler",
-  "New Relic",
-  "Sentry",
+  "SonarQube",
+
+  // AI-Assisted Development
+  "Cursor AI",
+  "Claude",
+  "GitHub Copilot",
+  "ChatGPT",
+  "Gemini",
+  "Prompt Engineering",
+
+  // Tools
+  "Git",
+  "GitHub",
+  "Swagger",
+  "Postman",
+  "Jira",
+  "Agile",
+  "Scrum",
 ] as const;

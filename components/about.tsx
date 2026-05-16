@@ -19,44 +19,60 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Information Technology</span>, I have been
-        passionate about programming for over{" "}
-        <span className="font-medium">7 years</span>. Throughout my career, I've
-        developed numerous applications using{" "}
-        <span className="font-medium">JavaScript</span> as my core language.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect and building scalable solutions that make a real
-        impact.
+        I'm a <span className="font-medium">Senior Software Engineer</span>{" "}
+        with <span className="font-medium">7+ years</span> of hands-on
+        experience designing and shipping{" "}
+        <span className="font-medium">
+          scalable fintech applications and payment systems
+        </span>
+        . Currently leading backend engineering in{" "}
+        <span className="font-medium">Dubai's insurance sector</span>, I help
+        startups and product teams deliver secure, production-grade software
+        across <span className="italic">UAE, USA, Canada, and UK</span>{" "}
+        markets.
       </p>
       <p className="mb-3">
-        My expertise spans across the full stack with{" "}
+        My core stack is{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, and Nest.js
-        </span>
-        . I have extensive experience working with various databases including{" "}
-        <span className="font-medium">
-          MongoDB, MySQL, Oracle, and Sequelize ORM
-        </span>
-        . For the past{" "}
-        <span className="font-medium">3 years</span>, I've been working
-        extensively with{" "}
-        <span className="font-medium">TypeScript</span>, which has significantly
-        improved my development workflow and code quality.
+          Node.js, NestJS, Express.js, and TypeScript
+        </span>{" "}
+        on the backend, paired with{" "}
+        <span className="font-medium">React.js, Next.js, and Redux</span> on
+        the frontend. I specialize in{" "}
+        <span className="font-medium">payment gateway integrations</span> —
+        Stripe, Apple Pay, Checkout.com, TAP, and Flinks — along with complex
+        financial modules, KYC workflows, and secure transaction processing.
       </p>
       <p className="mb-3">
-        I have hands-on experience with modern development practices including{" "}
-        <span className="font-medium">Docker containerization</span> and{" "}
-        <span className="font-medium">CI/CD pipelines</span>. I stay current
-        with the latest technologies and have been leveraging{" "}
-        <span className="font-medium">AI tools like Cursor and Claude 4</span>{" "}
-        to enhance my development productivity and code quality.
+        I have deep expertise across{" "}
+        <span className="font-medium">
+          MongoDB, PostgreSQL, MySQL, Oracle, and Sequelize ORM
+        </span>
+        , with strong skills in database design, indexing strategies, and
+        query optimization for high-traffic systems. I'm hands-on with{" "}
+        <span className="font-medium">Docker, CI/CD pipelines</span>, and
+        production observability tools like New Relic, Sentry, Axiom, and
+        Papertrail.
+      </p>
+      <p className="mb-3">
+        I leverage{" "}
+        <span className="font-medium">
+          AI tools (Cursor AI, Claude, GitHub Copilot, ChatGPT, Gemini)
+        </span>{" "}
+        to accelerate development cycles and improve code quality — shipping
+        production features faster without compromising engineering
+        standards.
       </p>
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy exploring
-        new technologies. I believe in
-        continuous learning and am always excited to take on new challenges that
-        push the boundaries of what's possible with modern web development.
+        <span className="italic">I'm currently open to</span>{" "}
+        <span className="font-medium">
+          remote contract and part-time engagements
+        </span>{" "}
+        — Node.js backend work, fintech projects, payment integrations, and
+        technical consulting. I work async-first and have a strong track
+        record collaborating with distributed teams across{" "}
+        <span className="font-medium">UK, EU, US, and Canadian</span>{" "}
+        timezones.
       </p>
     </MotionSection>
   );

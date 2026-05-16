@@ -6,13 +6,138 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Muhammad Haziq | Personal Portfolio",
+  metadataBase: new URL("https://muhammadhaziq.github.io"),
+  title:
+    "Muhammad Haziq | Senior Node.js Developer | Fintech & Payments Specialist | Remote Contract (UK/EU/US)",
   description:
-    "Muhammad Haziq is a full-stack developer with 7 years of experience.",
+    "Senior Software Engineer with 7+ years building scalable fintech applications, Node.js APIs, and payment integrations (Stripe, Apple Pay, Checkout.com, TAP, Flinks). Available for remote contract & part-time roles across UK, EU, US, and Canada. Expert in Node.js, NestJS, TypeScript, React, Next.js, and AI-assisted development.",
+  keywords: [
+    "Senior Node.js Developer",
+    "Remote Node.js Developer",
+    "Node.js Backend Engineer",
+    "Senior Software Engineer Remote",
+    "Fintech Developer",
+    "Payment Gateway Integration",
+    "Stripe Developer",
+    "NestJS Developer",
+    "TypeScript Developer",
+    "React Developer",
+    "Next.js Developer",
+    "MERN Stack Developer",
+    "Full Stack Developer Dubai",
+    "Remote Senior Engineer UK",
+    "Remote Developer EST",
+    "Contract Node.js Engineer",
+    "Part Time Backend Developer",
+    "Freelance Full Stack Developer",
+    "AI Assisted Development",
+    "Cursor AI Developer",
+    "Muhammad Haziq",
+    "Muhammad Haziq Developer",
+    "Muhammad Haziq Portfolio",
+  ],
+  authors: [{ name: "Muhammad Haziq", url: "https://muhammadhaziq.github.io" }],
+  creator: "Muhammad Haziq",
+  publisher: "Muhammad Haziq",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://muhammadhaziq.github.io",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://muhammadhaziq.github.io",
+    title:
+      "Muhammad Haziq | Senior Node.js Developer | Fintech & Payments Specialist",
+    description:
+      "Senior Software Engineer with 7+ years in fintech, payment integrations (Stripe, Apple Pay), and Node.js/NestJS. Available for remote contract work across UK, EU, US, Canada.",
+    siteName: "Muhammad Haziq Portfolio",
+    images: [
+      {
+        url: "/profile_image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Haziq - Senior Node.js Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Muhammad Haziq | Senior Node.js Developer | Fintech & Payments Specialist",
+    description:
+      "Senior Software Engineer with 7+ years in fintech & payment integrations. Available for remote contract work (UK/EU/US/Canada).",
+    images: ["/profile_image.jpeg"],
+    creator: "@MuhammadHaziq",
+  },
+  category: "technology",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Muhammad Haziq",
+  url: "https://muhammadhaziq.github.io",
+  image: "https://muhammadhaziq.github.io/profile_image.jpeg",
+  sameAs: [
+    "https://www.linkedin.com/in/muhammad-haziq/",
+    "https://github.com/MuhammadHaziq",
+  ],
+  jobTitle: "Senior Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "InsuranceMarket.ae",
+  },
+  description:
+    "Senior Software Engineer with 7+ years building scalable fintech applications, Node.js APIs, and payment integrations. Available for remote contract & part-time roles.",
+  knowsAbout: [
+    "Node.js",
+    "NestJS",
+    "TypeScript",
+    "React.js",
+    "Next.js",
+    "Fintech Development",
+    "Payment Gateway Integration",
+    "Stripe",
+    "Apple Pay",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Docker",
+    "CI/CD",
+    "AI-Assisted Development",
+    "Microservices Architecture",
+    "REST APIs",
+    "GraphQL",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  email: "muhammadhaziq341@gmail.com",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Professional",
+    email: "muhammadhaziq341@gmail.com",
+    availableLanguage: ["English"],
+    areaServed: ["UK", "EU", "US", "Canada", "UAE"],
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +147,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <link rel="canonical" href="https://muhammadhaziq.github.io" />
+        <meta name="theme-color" content="#fbe2e3" />
+        <meta name="format-detection" content="telephone=no" />
+        <Script
+          id="json-ld-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
