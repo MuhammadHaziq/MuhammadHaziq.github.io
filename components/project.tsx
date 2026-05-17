@@ -38,14 +38,14 @@ export default function Project({
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className="group mb-6 sm:mb-8 last:mb-0 w-full max-w-[44rem]"
+      className="group mb-6 sm:mb-8 last:mb-0 w-full max-w-[55rem]"
     >
       <article
         className="bg-white border border-black/5 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-black/10 dark:bg-white/10 dark:border-white/10 dark:hover:bg-white/[0.13] dark:hover:border-white/20"
       >
         {/* Visual Header */}
         <div
-          className={`relative h-[160px] sm:h-[180px] flex items-center justify-between px-6 sm:px-8 overflow-hidden bg-gradient-to-br ${theme.gradient}`}
+          className={`relative h-[160px] sm:h-[200px] flex items-center justify-between px-6 sm:px-10 overflow-hidden bg-gradient-to-br ${theme.gradient}`}
         >
           <div className="relative z-10">
             <div className="inline-flex items-center gap-1.5 bg-white/70 backdrop-blur-sm px-2.5 py-1 rounded-md mb-3 dark:bg-white/20">
@@ -57,7 +57,7 @@ export default function Project({
               </span>
             </div>
             <div
-              className={`text-2xl sm:text-4xl font-semibold tracking-tight leading-tight ${theme.titleColor}`}
+              className={`text-2xl sm:text-[2.75rem] font-semibold tracking-tight leading-tight ${theme.titleColor}`}
             >
               {title}
             </div>
@@ -70,7 +70,7 @@ export default function Project({
 
           {/* Decorative Icon */}
           <div
-            className={`text-[60px] sm:text-[90px] ${theme.iconColor}`}
+            className={`text-[60px] sm:text-[110px] ${theme.iconColor}`}
             style={{ opacity: 0.18 }}
             aria-hidden="true"
           >
@@ -79,7 +79,7 @@ export default function Project({
         </div>
 
         {/* Content */}
-        <div className="px-5 sm:px-8 py-5 sm:py-6">
+        <div className="px-5 sm:px-10 py-5 sm:py-7">
           <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
             <div>
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 dark:text-white">

@@ -21,7 +21,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[60rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[70rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -74,7 +74,7 @@ export default function Intro() {
       </MotionH1>
 
       <MotionDiv
-        className="mb-8 px-4 max-w-[42rem] mx-auto"
+        className="mb-8 px-4 max-w-[50rem] mx-auto"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
@@ -148,7 +148,7 @@ export default function Intro() {
       </MotionDiv>
 
       <MotionDiv
-        className="mt-6 px-4 text-sm sm:text-base text-gray-600 dark:text-white/60 max-w-[42rem] mx-auto"
+        className="mt-6 px-4 text-sm sm:text-base text-gray-600 dark:text-white/60 max-w-[50rem] mx-auto"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
