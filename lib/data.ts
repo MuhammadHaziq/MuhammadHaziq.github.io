@@ -1,9 +1,11 @@
 import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
-import financeThat from "@/public/financeThat.jpeg";
-import laptopzone from "@/public/laptopzone.jpeg";
-import kyrioPos from "@/public/kyriopos.jpeg";
-import insuanceMarket from "@/public/insurancemarket.png";
+import {
+  MdShield,
+  MdDirectionsCar,
+  MdLaptop,
+  MdPointOfSale,
+} from "react-icons/md";
 
 export const links = [
   {
@@ -61,10 +63,20 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "InsuranceMarket.ae — UAE's Leading Insurance Platform",
+    title: "InsuranceMarket",
+    subtitle: "UAE's Leading Insurance Platform",
+    role: "Senior Backend Engineer",
+    period: "2023 – Present",
+    location: "UAE",
+    domain: "insurancemarket.ae",
     link: "https://insurancemarket.ae/",
     description:
-      "Senior Backend Engineer on UAE's #1 digital insurance platform. Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations and led code quality initiatives.",
+      "Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations.",
+    metrics: [
+      { label: "PAYMENT GATEWAYS", value: "3+" },
+      { label: "MARKET RANK", value: "#1 UAE" },
+      { label: "FOCUS AREA", value: "Fintech" },
+    ],
     tags: [
       "Node.js",
       "NestJS",
@@ -75,15 +87,31 @@ export const projectsData = [
       "Checkout.com",
       "TAP",
       "Cursor AI",
-      "SonarQube",
     ],
-    imageUrl: insuanceMarket,
+    icon: MdShield,
+    theme: {
+      gradient: "from-blue-100 to-blue-300 dark:from-blue-900/40 dark:to-blue-700/30",
+      titleColor: "text-blue-900 dark:text-blue-100",
+      domainColor: "text-blue-700 dark:text-blue-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-blue-700 dark:text-blue-300",
+    },
   },
   {
-    title: "FinanceThat.ca — Vehicle Financing Platform (Canada & US)",
+    title: "FinanceThat",
+    subtitle: "Vehicle Financing Platform",
+    role: "Lead Developer",
+    period: "2021 – 2023",
+    location: "Canada & US",
+    domain: "financethat.ca",
     link: "https://financethat.ca",
     description:
-      "Lead Developer architecting a vehicle financing and listing platform serving Canadian and US markets. Integrated Stripe for ad boosting and subscription payments, plus Flinks for KYC, identity verification, and credit report fetching. Built reusable UI components, managed complex state with Redux, and led a distributed remote team across multiple timezones.",
+      "Architected scalable vehicle financing and listing platform serving Canadian and US markets. Integrated Stripe for ad boosting and subscription payments, plus Flinks for KYC, identity verification, and credit reports. Led a distributed remote team and managed complex state with Redux.",
+    metrics: [
+      { label: "MARKETS", value: "CA + US" },
+      { label: "ROLE", value: "Lead Dev" },
+      { label: "INTEGRATIONS", value: "Stripe + Flinks" },
+    ],
     tags: [
       "React",
       "Redux",
@@ -93,23 +121,56 @@ export const projectsData = [
       "PostgreSQL",
       "Stripe",
       "Flinks",
-      "Scss",
     ],
-    imageUrl: financeThat,
+    icon: MdDirectionsCar,
+    theme: {
+      gradient: "from-teal-100 to-teal-300 dark:from-teal-900/40 dark:to-teal-700/30",
+      titleColor: "text-teal-900 dark:text-teal-100",
+      domainColor: "text-teal-700 dark:text-teal-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-teal-700 dark:text-teal-300",
+    },
   },
   {
-    title: "LaptopZone USA — E-Commerce Platform",
+    title: "LaptopZone",
+    subtitle: "E-Commerce Platform",
+    role: "Full-Stack Developer",
+    period: "2018 – 2021",
+    location: "USA",
+    domain: "laptopzoneusa.com",
     link: "https://laptopzoneusa.com",
     description:
-      "High-conversion e-commerce platform built for the US market specializing in laptop sales and repairs. Implemented optimized checkout flows, inventory management, order tracking, and customer service modules. Designed scalable backend architecture with Oracle database and built responsive React frontend for seamless shopping experiences.",
-    tags: ["Node.js", "Express", "Oracle", "React", "Redux", "CSS"],
-    imageUrl: laptopzone,
+      "High-conversion e-commerce platform built for the US market specializing in laptop sales and repairs. Implemented optimized checkout flows, inventory management, order tracking, and customer service modules. Designed scalable backend architecture with Oracle database.",
+    metrics: [
+      { label: "MARKET", value: "USA" },
+      { label: "DOMAIN", value: "E-Commerce" },
+      { label: "DATABASE", value: "Oracle" },
+    ],
+    tags: ["Node.js", "Express", "Oracle", "React", "Redux"],
+    icon: MdLaptop,
+    theme: {
+      gradient: "from-amber-100 to-amber-300 dark:from-amber-900/40 dark:to-amber-700/30",
+      titleColor: "text-amber-900 dark:text-amber-100",
+      domainColor: "text-amber-700 dark:text-amber-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-amber-700 dark:text-amber-300",
+    },
   },
   {
-    title: "Kyrio POS — UK Retail Point-of-Sale System",
+    title: "Kyrio POS",
+    subtitle: "UK Retail Point-of-Sale",
+    role: "Full-Stack Developer",
+    period: "2018 – 2021",
+    location: "UK",
+    domain: "dashboard.kyriopos.com",
     link: "https://dashboard.kyriopos.com/#/summary",
     description:
-      "Full-Stack Developer on a Loyverse POS-inspired system for UK retail clients. Built role-based access control for managers, cashiers, and admins. Implemented real-time sales reports, inventory tracking, customer dashboards, and graph-based analytics. Managed complex MongoDB relationships with Mongoose for filtered reporting and offline-first capabilities.",
+      "Loyverse POS-inspired system for UK retail clients. Built role-based access control for managers, cashiers, and admins. Implemented real-time sales reports, inventory tracking, customer dashboards, and graph-based analytics with offline-first capabilities.",
+    metrics: [
+      { label: "MARKET", value: "UK" },
+      { label: "USER ROLES", value: "3+ Tiers" },
+      { label: "FEATURES", value: "Real-time" },
+    ],
     tags: [
       "Node.js",
       "Express",
@@ -117,10 +178,15 @@ export const projectsData = [
       "Mongoose",
       "React",
       "Redux",
-      "Scss",
-      "Analytics",
     ],
-    imageUrl: kyrioPos,
+    icon: MdPointOfSale,
+    theme: {
+      gradient: "from-pink-100 to-pink-300 dark:from-pink-900/40 dark:to-pink-700/30",
+      titleColor: "text-pink-900 dark:text-pink-100",
+      domainColor: "text-pink-700 dark:text-pink-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-pink-700 dark:text-pink-300",
+    },
   },
 ] as const;
 
