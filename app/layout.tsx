@@ -13,9 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   metadataBase: new URL("https://muhammadhaziq.github.io"),
   title:
-    "Muhammad Haziq | Senior Node.js Developer | Fintech & Payments Specialist | Remote Contract (UK/EU/US)",
+    "Muhammad Haziq | Senior Node.js & Fintech Engineer | Available for Remote Contract",
   description:
-    "Senior Software Engineer with 7+ years building scalable fintech applications, Node.js APIs, and payment integrations (Stripe, Apple Pay, Checkout.com, TAP, Flinks). Available for remote contract & part-time roles across UK, EU, US, and Canada. Expert in Node.js, NestJS, TypeScript, React, Next.js, and AI-assisted development.",
+    "Senior Node.js Engineer with 7+ years building fintech backends and payment systems (Stripe, Apple Pay, Checkout.com, TAP, Flinks). Available for remote contract roles across UK, EU, US, and Canada. Book a free 30-min call.",
   keywords: [
     "Senior Node.js Developer",
     "Remote Node.js Developer",

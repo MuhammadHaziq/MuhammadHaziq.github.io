@@ -17,7 +17,9 @@ export default function Project({
   link,
   domain,
   location,
+  problem,
   description,
+  outcome,
   tags,
   metrics,
   theme,
@@ -87,6 +89,26 @@ export default function Project({
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-white/60">
                 {role} · {period}
+              </p>
+            </div>
+          </div>
+
+          {/* Problem / Outcome */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            <div className="bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl px-4 py-3">
+              <p className="text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-red-500 dark:text-red-400 mb-1">
+                The Problem
+              </p>
+              <p className="text-xs sm:text-[13px] text-gray-700 dark:text-white/70 leading-relaxed">
+                {problem}
+              </p>
+            </div>
+            <div className="bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-xl px-4 py-3">
+              <p className="text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-green-600 dark:text-green-400 mb-1">
+                The Outcome
+              </p>
+              <p className="text-xs sm:text-[13px] text-gray-700 dark:text-white/70 leading-relaxed">
+                {outcome}
               </p>
             </div>
           </div>

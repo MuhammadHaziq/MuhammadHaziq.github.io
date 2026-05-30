@@ -6,6 +6,7 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { BsCalendar2Check } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import profileImg from "@/public/profile_image.jpeg";
@@ -105,24 +106,32 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#contact"
+          href="/contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+        >
+          Book a Call{" "}
+          <BsCalendar2Check className="opacity-70 group-hover:scale-110 transition" />
+        </Link>
+
+        <Link
+          href="#projects"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           onClick={() => {
-            setActiveSection("Contact");
+            setActiveSection("Projects");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Hire Me{" "}
+          View My Work{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/Muhammad-Haziq-Senior-Software-Engineer.pdf"
+          href="/Muhammad-Haziq-Senior-Software-Engnieer.pdf"
           download
           aria-label="Download Muhammad Haziq CV"
         >
-          Download CV{" "}
+          CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
 

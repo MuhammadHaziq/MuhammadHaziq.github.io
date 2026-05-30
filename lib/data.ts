@@ -70,8 +70,12 @@ export const projectsData = [
     location: "UAE",
     domain: "insurancemarket.ae",
     link: "https://insurancemarket.ae/",
+    problem:
+      "Race conditions in async payment flows were causing failed transactions across 3 concurrent gateways — Apple Pay, Checkout.com, and TAP.",
     description:
       "Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations.",
+    outcome:
+      "Resolved concurrency bugs, unified multi-gateway payment flows, and reduced API response times across critical policy purchase paths.",
     metrics: [
       { label: "PAYMENT GATEWAYS", value: "3+" },
       { label: "MARKET RANK", value: "#1 UAE" },
@@ -105,8 +109,12 @@ export const projectsData = [
     location: "Canada & US",
     domain: "financethat.ca",
     link: "https://financethat.ca",
+    problem:
+      "Needed a multi-market financing platform with KYC identity verification, credit reporting, and Stripe subscription payments — built from scratch across CA & US.",
     description:
       "Architected scalable vehicle financing and listing platform serving Canadian and US markets. Integrated Stripe for ad boosting and subscription payments, plus Flinks for KYC, identity verification, and credit reports. Led a distributed remote team and managed complex state with Redux.",
+    outcome:
+      "Shipped a production vehicle financing platform serving CA & US markets with full Stripe + Flinks integration and complex Redux state management.",
     metrics: [
       { label: "MARKETS", value: "CA + US" },
       { label: "ROLE", value: "Lead Dev" },
@@ -139,8 +147,12 @@ export const projectsData = [
     location: "USA",
     domain: "laptopzoneusa.com",
     link: "https://laptopzoneusa.com",
+    problem:
+      "Client needed a high-conversion US e-commerce platform with real-time inventory management, order tracking, and a scalable Oracle-backed architecture.",
     description:
       "High-conversion e-commerce platform built for the US market specializing in laptop sales and repairs. Implemented optimized checkout flows, inventory management, order tracking, and customer service modules. Designed scalable backend architecture with Oracle database.",
+    outcome:
+      "Delivered a full-stack e-commerce system with optimized checkout flows, order tracking, and a scalable Oracle-backed architecture for the US market.",
     metrics: [
       { label: "MARKET", value: "USA" },
       { label: "DOMAIN", value: "E-Commerce" },
@@ -164,8 +176,12 @@ export const projectsData = [
     location: "UK",
     domain: "dashboard.kyriopos.com",
     link: "https://dashboard.kyriopos.com/#/summary",
+    problem:
+      "UK retail client needed an offline-first POS system with role-based access for managers, cashiers, and admins — plus real-time analytics and multi-device sync.",
     description:
       "Loyverse POS-inspired system for UK retail clients. Built role-based access control for managers, cashiers, and admins. Implemented real-time sales reports, inventory tracking, customer dashboards, and graph-based analytics with offline-first capabilities.",
+    outcome:
+      "Shipped a complete POS platform with 3 access tiers, real-time sales graphs, inventory tracking, and offline-first capability for UK retail clients.",
     metrics: [
       { label: "MARKET", value: "UK" },
       { label: "USER ROLES", value: "3+ Tiers" },
