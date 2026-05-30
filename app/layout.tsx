@@ -88,26 +88,34 @@ export const metadata = {
   category: "technology",
 };
 
-const jsonLd = {
+const personLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Muhammad Haziq",
+  alternateName: "Muhammad Haziq",
   url: "https://muhammadhaziq.github.io",
   image: "https://muhammadhaziq.github.io/profile_image.jpeg",
   sameAs: [
     "https://www.linkedin.com/in/muhammad-haziq/",
     "https://github.com/MuhammadHaziq",
   ],
-  jobTitle: "Senior Software Engineer",
+  jobTitle: [
+    "Senior Software Engineer",
+    "Backend Architect",
+    "Fintech Developer",
+    "Node.js Consultant",
+  ],
   worksFor: {
     "@type": "Organization",
     name: "InsuranceMarket.ae",
+    url: "https://insurancemarket.ae",
   },
   description:
-    "Senior Software Engineer with 7+ years building scalable fintech applications, Node.js APIs, and payment integrations. Available for remote contract & part-time roles.",
+    "Senior Node.js and fintech engineer with 7+ years building payment systems, scalable APIs, and fintech backends. Available for remote contract roles across UK, EU, US, UAE, and Canada.",
   knowsAbout: [
     "Node.js",
     "NestJS",
+    "Express.js",
     "TypeScript",
     "React.js",
     "Next.js",
@@ -115,16 +123,43 @@ const jsonLd = {
     "Payment Gateway Integration",
     "Stripe",
     "Apple Pay",
+    "Checkout.com",
+    "TAP Payments",
+    "Flinks",
     "MongoDB",
     "PostgreSQL",
     "MySQL",
+    "Redis",
     "Docker",
+    "AWS",
     "CI/CD",
     "AI-Assisted Development",
     "Microservices Architecture",
     "REST APIs",
     "GraphQL",
+    "Backend Architecture",
+    "MERN Stack",
+    "Remote Software Development",
   ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Senior Software Engineer",
+    occupationLocation: {
+      "@type": "City",
+      name: "Dubai",
+    },
+    responsibilities:
+      "Backend architecture, fintech API development, payment gateway integrations, remote contract engineering",
+    skills:
+      "Node.js, NestJS, TypeScript, React, MongoDB, PostgreSQL, Docker, AWS, Stripe, Apple Pay",
+  },
+  seeks: {
+    "@type": "Demand",
+    name: "Remote Contract Engineering Engagement",
+    description:
+      "Remote contract or part-time senior backend engineering roles in fintech, SaaS, or enterprise applications",
+    availabilityStarts: "2025-07-01",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dubai",
@@ -136,7 +171,20 @@ const jsonLd = {
     contactType: "Professional",
     email: "muhammadhaziq341@gmail.com",
     availableLanguage: ["English"],
-    areaServed: ["UK", "EU", "US", "Canada", "UAE"],
+    areaServed: ["UK", "EU", "US", "Canada", "UAE", "Australia"],
+  },
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Muhammad Haziq — Senior Node.js & Fintech Engineer",
+  url: "https://muhammadhaziq.github.io",
+  description:
+    "Portfolio of Muhammad Haziq, Senior Node.js Engineer specializing in fintech backends, payment integrations, and scalable APIs. Available for remote contract work.",
+  author: {
+    "@type": "Person",
+    name: "Muhammad Haziq",
   },
 };
 
@@ -154,7 +202,12 @@ export default function RootLayout({
         <Script
           id="json-ld-person"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+        />
+        <Script
+          id="json-ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
       </head>
       <body
