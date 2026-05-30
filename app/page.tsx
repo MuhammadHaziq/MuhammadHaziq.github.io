@@ -1,5 +1,6 @@
 import About from "@/components/about";
 import Availability from "@/components/availability";
+import BlogPreview from "@/components/blog-preview";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import FAQ from "@/components/faq";
@@ -20,6 +21,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Availability />
+      <BlogPreview />
       <FAQ />
       <Contact />
     </main>

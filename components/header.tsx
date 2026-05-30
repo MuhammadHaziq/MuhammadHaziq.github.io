@@ -16,10 +16,20 @@ export default function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
+  const getHref = (hash: string) => {
+    if (hash.startsWith("/")) return hash;          // full path (e.g. /blog)
+    return isHomePage ? hash : `/${hash}`;          // hash link — prefix when off-home
+  };
+
+  const isActive = (name: string, hash: string) => {
+    if (hash.startsWith("/")) return pathname.startsWith(hash);
+    return activeSection === name;
+  };
+
   return (
     <header className="z-[999] relative">
       <MotionDiv
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[40rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></MotionDiv>
@@ -37,11 +47,10 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                   {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection === link.name,
+                    "text-gray-950 dark:text-gray-200": isActive(link.name, link.hash),
                   }
                 )}
-                href={isHomePage ? link.hash : `/${link.hash}`}
+                href={getHref(link.hash)}
                 onClick={() => {
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());
@@ -49,7 +58,7 @@ export default function Header() {
               >
                 {link.name}
 
-                {link.name === activeSection && (
+                {isActive(link.name, link.hash) && (
                   <MotionSpan
                     className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                     layoutId="activeSection"

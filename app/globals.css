@@ -13,3 +13,44 @@ html.dark {
 .borderBlack {
   @apply border border-black/10;
 }
+
+/* Blog post prose typography */
+.prose-content {
+  @apply text-gray-800 dark:text-white/80 leading-relaxed;
+}
+.prose-content h2 {
+  @apply text-2xl font-bold text-gray-900 dark:text-white mt-10 mb-4;
+}
+.prose-content h3 {
+  @apply text-xl font-semibold text-gray-900 dark:text-white mt-8 mb-3;
+}
+.prose-content p {
+  @apply mb-5 text-base leading-relaxed;
+}
+.prose-content ul {
+  @apply list-disc pl-6 mb-5 space-y-1.5;
+}
+.prose-content ol {
+  @apply list-decimal pl-6 mb-5 space-y-1.5;
+}
+.prose-content li {
+  @apply text-base;
+}
+.prose-content pre {
+  @apply bg-gray-900 dark:bg-black/40 text-gray-100 rounded-xl p-5 overflow-x-auto text-sm mb-6 border border-white/5;
+}
+.prose-content code:not(pre code) {
+  @apply bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-white/80 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+.prose-content pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+.prose-content a {
+  @apply text-gray-900 dark:text-white underline underline-offset-2 hover:opacity-70 transition-opacity;
+}
+.prose-content strong {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+.prose-content hr {
+  @apply border-black/10 dark:border-white/10 my-8;
+}
