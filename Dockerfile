@@ -1,23 +1,23 @@
-FROM node:lts-alpine AS builder
+# Step 1. Build the static export (next.config.js sets output: "export" -> /app/out)
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
-RUN npm install 
+ARG CONTACT_EMAIL
+ENV CONTACT_EMAIL=$CONTACT_EMAIL
+
+COPY package.json package-lock.json ./
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
-  
 
-# Step 2. Create a lightweight production image with Nginx
+
+# Step 2. Serve the static files with Nginx
 FROM nginx:alpine
 
-# Copy custom nginx config
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/out /usr/share/nginx/html
 
-# Copy the Next.js build output
-COPY --from=builder /app/.next /usr/share/nginx/html/.next
-COPY --from=builder /app/public /usr/share/nginx/html/
-
-EXPOSE 3000
+EXPOSE 80
