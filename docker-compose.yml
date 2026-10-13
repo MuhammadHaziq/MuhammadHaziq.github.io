@@ -5,6 +5,7 @@ services:
       context: .
       args:
         CONTACT_EMAIL: ${CONTACT_EMAIL:-}
+        CONTACT_WHATSAPP: ${CONTACT_WHATSAPP:-}
     container_name: portfolio
     ports:
       - "8080:80"
@@ -24,3 +25,4 @@ services:
       - /app/.next
     environment:
       - CONTACT_EMAIL=${CONTACT_EMAIL:-}
+      - CONTACT_WHATSAPP=${CONTACT_WHATSAPP:-}

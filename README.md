@@ -87,13 +87,14 @@ docker compose up --build                            # production build behind N
 docker compose --profile dev up --build portfolio-dev  # dev server with hot reload → http://localhost:3000
 ```
 
-To bake in the contact email, run `CONTACT_EMAIL=you@example.com docker compose up --build`. The production image builds the static export and serves `/out` with Nginx, using `nginx.conf`.
+To bake in the contact details, run `CONTACT_EMAIL=you@example.com CONTACT_WHATSAPP=971501234567 docker compose up --build`. The production image builds the static export and serves `/out` with Nginx, using `nginx.conf`.
 
 ### Environment variables
 
 | Variable | Purpose | Default |
 |---|---|---|
 | `CONTACT_EMAIL` | Recipient address for the contact forms | `muhammadhaziq341@gmail.com` |
+| `CONTACT_WHATSAPP` | WhatsApp number in international format (for example `971501234567`). Turns on the WhatsApp buttons | not set (buttons hidden) |
 | `GOOGLE_SITE_VERIFICATION` | Google Search Console verification token (adds the `google-site-verification` meta tag) | not set |
 | `BING_SITE_VERIFICATION` | Bing Webmaster Tools verification token (adds the `msvalidate.01` meta tag) | not set |
 
@@ -101,6 +102,7 @@ In CI these come from GitHub repository variables of the same names. For local d
 
 ```bash
 CONTACT_EMAIL=you@example.com
+CONTACT_WHATSAPP=971501234567
 ```
 
 ---
@@ -185,7 +187,7 @@ Edit `testimonialsData` in `lib/data.ts`. A testimonial is published only when `
 
 ### WhatsApp
 
-Set `WHATSAPP_NUMBER` in `lib/seo.ts`, using digits only in international format (for example `971501234567`). That turns on the floating chat button, the button on the contact page and the footer link, and adds the number to the structured data. Leave it empty to hide all of them.
+Set the `CONTACT_WHATSAPP` environment variable (`.env.local` locally, a repository variable in CI) to the number in international format, for example `971501234567`. A leading `+` and spaces are stripped. That turns on the floating chat button, the button on the contact page and the footer link, and adds the number to the structured data. Leave it unset to hide all of them.
 
 ### Calendly link
 
@@ -208,11 +210,11 @@ Change `CALENDLY_URL` in `components/calendly-embed.tsx`. Every "Book a call" bu
 Every push to `main` triggers `.github/workflows/main.yml`, which:
 
 1. Installs dependencies with `npm ci` on Node 22
-2. Runs `next build` with `CONTACT_EMAIL` taken from the repository variable `vars.CONTACT_EMAIL`
+2. Runs `next build` with `CONTACT_EMAIL` and `CONTACT_WHATSAPP` taken from the repository variables of the same names
 3. Adds `.nojekyll` and uploads `./out` as the Pages artifact
 4. Deploys it to GitHub Pages
 
-To set the email used in production, go to **Settings → Secrets and variables → Actions → Variables** and add `CONTACT_EMAIL`. The **Test Email Variable** workflow (`test-email.yml`, run manually) checks that the variable is set.
+To set the email and WhatsApp number used in production, go to **Settings → Secrets and variables → Actions → Variables** and add `CONTACT_EMAIL` and `CONTACT_WHATSAPP`. The **Test Email Variable** workflow (`test-email.yml`, run manually) checks that the variable is set.
 
 You can also trigger a deploy manually from the **Actions** tab using `workflow_dispatch`.
 
