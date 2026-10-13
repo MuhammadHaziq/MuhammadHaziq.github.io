@@ -2,6 +2,15 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getAllPosts, getPost, formatDate } from "@/lib/blog";
 import { CALENDLY_URL } from "@/components/calendly-embed";
+import {
+  OG_IMAGE,
+  PERSON_ID,
+  SITE_URL,
+  absoluteUrl,
+  breadcrumbLd,
+  jsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -12,20 +21,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(params.slug);
   return {
-    title: `${post.title} — Muhammad Haziq`,
-    description: post.description,
-    authors: [{ name: "Muhammad Haziq", url: "https://muhammadhaziq.github.io" }],
-    alternates: {
-      canonical: `https://muhammadhaziq.github.io/blog/${params.slug}`,
-    },
-    openGraph: {
-      title: post.title,
+    ...pageMetadata({
+      path: `/blog/${params.slug}`,
+      // Keep titles short enough for search results; long post titles skip the name suffix
+      title: post.title.length > 45 ? post.title : `${post.title} | Muhammad Haziq`,
       description: post.description,
+      ogTitle: post.title,
       type: "article",
       publishedTime: post.date,
-      authors: ["Muhammad Haziq"],
       tags: post.tags,
-    },
+    }),
+    authors: [{ name: "Muhammad Haziq", url: SITE_URL }],
   };
 }
 
@@ -33,22 +39,21 @@ export default function BlogPostPage({ params }: Props) {
   const post = getPost(params.slug);
   const allPosts = getAllPosts();
   const related = allPosts.filter((p) => p.slug !== params.slug).slice(0, 2);
+  const url = absoluteUrl(`/blog/${params.slug}`);
 
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
+    "@id": `${url}#article`,
     headline: post.title,
     description: post.description,
+    image: `${SITE_URL}${OG_IMAGE.url}`,
     datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: "Muhammad Haziq",
-      url: "https://muhammadhaziq.github.io",
-    },
-    publisher: {
-      "@type": "Person",
-      name: "Muhammad Haziq",
-    },
+    dateModified: post.date,
+    inLanguage: "en",
+    mainEntityOfPage: url,
+    author: { "@id": PERSON_ID, name: "Muhammad Haziq", url: absoluteUrl("/") },
+    publisher: { "@id": PERSON_ID },
     keywords: post.tags.join(", "),
   };
 
@@ -56,7 +61,14 @@ export default function BlogPostPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+        dangerouslySetInnerHTML={jsonLd([
+          articleLd,
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${params.slug}` },
+          ]),
+        ])}
       />
 
       <main className="flex flex-col items-center px-4 pb-24">
@@ -64,7 +76,7 @@ export default function BlogPostPage({ params }: Props) {
         <nav className="w-full max-w-[55rem] mt-6 mb-8 text-xs text-gray-400 dark:text-white/30">
           <Link href="/" className="hover:text-gray-600 dark:hover:text-white/50 transition">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-gray-600 dark:hover:text-white/50 transition">Blog</Link>
+          <Link href="/blog/" className="hover:text-gray-600 dark:hover:text-white/50 transition">Blog</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-600 dark:text-white/60 truncate">{post.title}</span>
         </nav>
@@ -94,11 +106,11 @@ export default function BlogPostPage({ params }: Props) {
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden flex-shrink-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/profile_image.jpeg" alt="Muhammad Haziq" className="w-full h-full object-cover" />
+                  <img src="/profile-photo.webp" alt="Muhammad Haziq" width={36} height={36} loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-900 dark:text-white">Muhammad Haziq</p>
-                  <p className="text-xs text-gray-500 dark:text-white/40">Senior Node.js & Fintech Engineer</p>
+                  <p className="text-xs text-gray-500 dark:text-white/40">Senior Full-Stack &amp; Node.js Engineer</p>
                 </div>
               </div>
               <div className="ml-auto flex items-center gap-3 text-xs text-gray-400 dark:text-white/30">
@@ -118,11 +130,12 @@ export default function BlogPostPage({ params }: Props) {
           {/* CTA */}
           <div className="mt-16 bg-white dark:bg-white/5 border border-black/[0.07] dark:border-white/10 rounded-2xl px-7 py-8 text-center shadow-sm">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-              Working on a fintech or Node.js project?
+              Building a web application or Node.js backend?
             </h2>
             <p className="text-sm text-gray-600 dark:text-white/60 mb-6 max-w-[32rem] mx-auto">
-              I&apos;m available for remote contract work. Book a free 30-minute call
-              to discuss your project.
+              I build web applications, SaaS products and fintech backends for
+              clients in the USA, UK, UAE and Saudi Arabia. Book a free
+              30-minute call to discuss your project.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <a
@@ -134,7 +147,7 @@ export default function BlogPostPage({ params }: Props) {
                 Book a Free Call
               </a>
               <Link
-                href="/blog"
+                href="/blog/"
                 className="inline-flex items-center justify-center bg-white dark:bg-white/10 border border-black/10 dark:border-white/10 px-6 py-3 rounded-full text-sm font-semibold text-gray-900 dark:text-white hover:scale-105 transition-transform"
               >
                 More Articles
@@ -152,7 +165,7 @@ export default function BlogPostPage({ params }: Props) {
                 {related.map((p) => (
                   <Link
                     key={p.slug}
-                    href={`/blog/${p.slug}`}
+                    href={`/blog/${p.slug}/`}
                     className="group bg-white dark:bg-white/5 border border-black/[0.07] dark:border-white/10 rounded-xl p-5 hover:-translate-y-0.5 hover:shadow-md transition-all"
                   >
                     <div className="flex flex-wrap gap-1 mb-2">

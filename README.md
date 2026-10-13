@@ -17,15 +17,17 @@ This is my personal portfolio, built with **Next.js 13 (App Router)** and export
 - **Home page:** intro, trust bar, about, featured projects, skills, experience timeline, availability, latest blog posts, FAQ and a contact form
 - **Technical blog:** Markdown posts on Node.js, NestJS, fintech and AI-assisted development
 - **Contact page:** an embedded Calendly booking widget alongside a message form
-- **SEO landing pages:** pages targeted at specific roles and regions
+- **Services page:** web application development services, case studies, process and engagement models
+- **SEO landing pages:** pages targeted at specific roles and regions (USA, UK, UAE, Saudi Arabia)
 - **Dark / light mode**, smooth Framer Motion animations and a scroll-aware navigation bar
-- **SEO metadata:** Open Graph and Twitter cards, plus JSON-LD structured data (Person, WebSite, FAQPage, BreadcrumbList and TechArticle)
+- **SEO:** a self-referencing canonical, Open Graph and Twitter tags on every page, a 1200×630 share image, `sitemap.xml`, `robots.txt`, `llms.txt`, and JSON-LD structured data (Person, WebSite, ProfilePage, ProfessionalService, FAQPage, BreadcrumbList, Blog, TechArticle and ContactPage)
 
 ### Featured work
 
 | Project | Role | Market | Highlights |
 |---|---|---|---|
-| [InsuranceMarket.ae](https://insurancemarket.ae/) | Senior Backend Engineer (2023 – present) | UAE | NestJS, TypeScript, MySQL/Sequelize; Apple Pay, Checkout.com and TAP gateways; fixed race conditions in async payment flows |
+| [InsuranceMarket.ae](https://insurancemarket.ae/) | Senior Backend Engineer (2023 – present) | UAE | NestJS, TypeScript, MySQL/Sequelize; insurance plan creation with GIG, Liva and other insurers; Apple Pay, Checkout.com and TAP gateways; fixed race conditions in async payment flows; agentic AI development with Claude AI |
+| [ISMO](https://www.ismo.gov.pk/) | Frontend Developer, solo (2024 – 2025) | Pakistan | Electricity market operator platform in React 18 + Redux; Market Participant portal with registration, e-signed declarations, balance and compliance dashboards; admin views; Pusher notifications |
 | [FinanceThat](https://financethat.ca) | Lead Developer (2021 – 2023) | Canada & US | Vehicle financing platform; Stripe subscriptions, Flinks KYC and credit reports; React/Redux |
 | [LaptopZone](https://laptopzoneusa.com) | Full-Stack Developer (2018 – 2021) | USA | E-commerce with checkout, inventory and order tracking; Node.js, Express, Oracle |
 | [Kyrio POS](https://dashboard.kyriopos.com/#/summary) | Full-Stack Developer (2018 – 2021) | UK | Offline-first retail POS with role-based access and real-time analytics; MERN stack |
@@ -92,8 +94,10 @@ To bake in the contact email, run `CONTACT_EMAIL=you@example.com docker compose 
 | Variable | Purpose | Default |
 |---|---|---|
 | `CONTACT_EMAIL` | Recipient address for the contact forms | `muhammadhaziq341@gmail.com` |
+| `GOOGLE_SITE_VERIFICATION` | Google Search Console verification token (adds the `google-site-verification` meta tag) | not set |
+| `BING_SITE_VERIFICATION` | Bing Webmaster Tools verification token (adds the `msvalidate.01` meta tag) | not set |
 
-For local development, put it in `.env.local`:
+In CI these come from GitHub repository variables of the same names. For local development, put them in `.env.local`:
 
 ```bash
 CONTACT_EMAIL=you@example.com
@@ -111,7 +115,9 @@ app/
   blog/page.tsx                 # Blog index
   blog/[slug]/page.tsx          # Blog post (statically generated from /posts)
   contact/page.tsx              # Calendly + contact form
-  hire-nodejs-developer-uk/     # ┐
+  web-application-development/  # Services hub (web app development)
+  web-application-developer-saudi-arabia/  # ┐
+  hire-nodejs-developer-uk/     # │
   hire-nodejs-developer-usa/    # │
   fintech-developer-uae/        # │ SEO landing pages
   backend-architect-dubai/      # │ (most use components/landing-shell.tsx)
@@ -121,18 +127,20 @@ app/
 components/
   intro, about, projects, project, skills, experience, availability,
   trust-bar, blog-preview, faq, contact, contact-form, calendly-embed,
-  header, footer, theme-switch, landing-shell, ...
+  header, footer, theme-switch, landing-shell, landing-sections,
+  case-study-list, ...
   Motion/                       # "use client" wrappers around framer-motion primitives
 context/
   active-section-context.tsx    # Tracks which section is in view, for nav highlighting
   theme-context.tsx             # Dark / light mode
 lib/
   data.ts                       # ⭐ Single source of truth: nav links, experience, projects, skills
+  seo.ts                        # pageMetadata(), canonical URLs, shared JSON-LD (Person, ProfessionalService, ...)
   blog.ts                       # Reads and parses Markdown posts from /posts
   hooks.ts                      # useSectionInView
   types.ts, utils.ts
 posts/                          # Blog posts (.md with front matter)
-public/                         # Images, profile photo, résumé PDF, sitemap.xml, robots.txt
+public/                         # Images, og-image.png, résumé PDF, sitemap.xml, robots.txt, llms.txt
 .github/workflows/main.yml      # Build and deploy to GitHub Pages
 Dockerfile, Dockerfile.dev, docker-compose.yml, nginx.conf   # Optional container setup
 ```
@@ -165,7 +173,19 @@ readTime: "6 min read"
 Post body in Markdown…
 ```
 
-Posts are sorted newest first. Also add the new URL to `public/sitemap.xml`.
+Posts are sorted newest first. Also add the new URL to `public/sitemap.xml` and `public/llms.txt`.
+
+### Adding a page
+
+Build the metadata with `pageMetadata({ path, title, description })` from `lib/seo.ts`. It sets a self-referencing canonical (with the trailing slash), plus Open Graph and Twitter tags. Without it, a page inherits the homepage's social tags. Keep titles under about 60 characters and descriptions between 120 and 160. Then link the page from `components/footer.tsx` and add it to `public/sitemap.xml`.
+
+### Testimonials
+
+Edit `testimonialsData` in `lib/data.ts`. A testimonial is published only when `approved: true`. Set that only after the person has confirmed the exact wording. In `npm run dev`, unapproved entries appear with a "Draft" badge so you can preview them. Testimonials show on the home page and the services page.
+
+### WhatsApp
+
+Set `WHATSAPP_NUMBER` in `lib/seo.ts`, using digits only in international format (for example `971501234567`). That turns on the floating chat button, the button on the contact page and the footer link, and adds the number to the structured data. Leave it empty to hide all of them.
 
 ### Calendly link
 

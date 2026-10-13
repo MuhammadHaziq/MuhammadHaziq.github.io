@@ -5,6 +5,7 @@ import {
   MdDirectionsCar,
   MdLaptop,
   MdPointOfSale,
+  MdElectricBolt,
 } from "react-icons/md";
 
 export const links = [
@@ -34,7 +35,7 @@ export const links = [
   },
   {
     name: "Blog",
-    hash: "/blog",
+    hash: "/blog/",
   },
 ] as const;
 
@@ -43,7 +44,7 @@ export const experiencesData = [
     title: "Senior Software Engineer (Full-Stack / Node.js)",
     location: "Dubai, UAE — InsuranceMarket.ae",
     description:
-      "Leading backend engineering for the UAE's largest digital insurance platform. Architecting fintech modules with TypeScript, NestJS, and Sequelize ORM on MySQL. Integrated multi-gateway payment systems including Apple Pay, Checkout.com, and TAP for secure policy transactions. Built cron jobs for third-party API integrations, wrote comprehensive Postman test suites, and led code refactoring initiatives to optimize application performance and resolve complex race conditions in async payment flows.",
+      "Leading backend engineering for the UAE's largest digital insurance platform. Architecting fintech modules with TypeScript, NestJS, and Sequelize ORM on MySQL. Built insurance plan creation with providers including GIG, Liva and other insurers. Integrated multi-gateway payment systems including Apple Pay, Checkout.com, and TAP for secure policy transactions. Currently developing agentic AI capabilities for the platform with Claude AI. Built cron jobs for third-party API integrations, wrote comprehensive Postman test suites, and led code refactoring initiatives to optimize application performance and resolve complex race conditions in async payment flows.",
     icon: React.createElement(FaNodeJs),
     date: "2023 - Present",
   },
@@ -77,13 +78,13 @@ export const projectsData = [
     problem:
       "Race conditions in async payment flows were causing failed transactions across 3 concurrent gateways — Apple Pay, Checkout.com, and TAP.",
     description:
-      "Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations.",
+      "Built insurance plan creation with providers including GIG, Liva and other insurers, so their plans can be offered and purchased on the platform. Integrated Apple Pay, Checkout.com, and TAP payment gateways handling secure policy transactions. Refactored legacy modules, resolved critical race conditions in async payment flows, and optimized database queries to reduce API response times. Built cron jobs for third-party API integrations, and now developing agentic AI capabilities for the platform with Claude AI.",
     outcome:
-      "Resolved concurrency bugs, unified multi-gateway payment flows, and reduced API response times across critical policy purchase paths.",
+      "Brought insurer plans from GIG, Liva and others onto the platform, resolved concurrency bugs, unified multi-gateway payment flows, reduced API response times on critical policy purchase paths, and started bringing agentic AI built on Claude AI into the product.",
     metrics: [
       { label: "PAYMENT GATEWAYS", value: "3+" },
       { label: "MARKET RANK", value: "#1 UAE" },
-      { label: "FOCUS AREA", value: "Fintech" },
+      { label: "FOCUS AREA", value: "Fintech + AI" },
     ],
     tags: [
       "Node.js",
@@ -94,6 +95,8 @@ export const projectsData = [
       "Apple Pay",
       "Checkout.com",
       "TAP",
+      "Agentic AI",
+      "Claude AI",
       "Cursor AI",
     ],
     icon: MdShield,
@@ -103,6 +106,44 @@ export const projectsData = [
       domainColor: "text-blue-700 dark:text-blue-300",
       statusText: "text-green-800 dark:text-green-300",
       iconColor: "text-blue-700 dark:text-blue-300",
+    },
+  },
+  {
+    title: "ISMO",
+    subtitle: "Independent System & Market Operator of Pakistan",
+    role: "Frontend Developer (Solo)",
+    period: "2024 – 2025",
+    location: "Pakistan",
+    domain: "ismo.gov.pk",
+    link: "https://www.ismo.gov.pk/",
+    problem:
+      "Pakistan's electricity market operator needed a public platform plus a secure portal where Market Participants could register, track their balances and compliance, and take part in Wheeling Auctions, with admins able to review every participant's details.",
+    description:
+      "Sole frontend developer for ISMO's web platform, built with React 18 and Redux. Delivered the public site (market data dashboards, auction hub, library, jobs and trainings) and the MP Login portal: multi-step market registration with document uploads and an e-signed Declaration of Conformity, and a participant dashboard showing security cover, energy and capacity balances, contracts and compliance status. Added complaints, forums and real-time notifications via Pusher. Admins can view all details of every Market Participant.",
+    outcome:
+      "Shipped the complete frontend single-handedly, covering the public site, the Market Participant portal and the admin views behind Pakistan's first Wheeling Auctions.",
+    metrics: [
+      { label: "ROLE", value: "Solo Frontend" },
+      { label: "SECTOR", value: "Energy" },
+      { label: "PORTALS", value: "Public + MP + Admin" },
+    ],
+    tags: [
+      "React 18",
+      "Redux",
+      "React Router",
+      "Formik",
+      "Yup",
+      "Bootstrap",
+      "ApexCharts",
+      "Pusher",
+    ],
+    icon: MdElectricBolt,
+    theme: {
+      gradient: "from-emerald-100 to-emerald-300 dark:from-emerald-900/40 dark:to-emerald-700/30",
+      titleColor: "text-emerald-900 dark:text-emerald-100",
+      domainColor: "text-emerald-700 dark:text-emerald-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-emerald-700 dark:text-emerald-300",
     },
   },
   {
@@ -210,6 +251,51 @@ export const projectsData = [
   },
 ] as const;
 
+export type Testimonial = {
+  name: string;
+  role: string; // e.g. "Engineering Manager". Leave "" to show only the company
+  company: string;
+  project: string;
+  location: string;
+  quote: string;
+  // Set to true only after the person has read and approved the exact quote.
+  // Unapproved testimonials are hidden in production and shown as drafts in `npm run dev`.
+  approved: boolean;
+};
+
+export const testimonialsData: Testimonial[] = [
+  {
+    name: "Usama",
+    role: "",
+    company: "InsuranceMarket.ae",
+    project: "InsuranceMarket",
+    location: "Dubai, UAE",
+    quote:
+      "Haziq built our insurance plan creation with providers like GIG and Liva, and took ownership of our payment flows across Apple Pay, Checkout.com and TAP. He tracked down the race conditions behind failed and duplicate policy transactions and fixed them properly. He's now building agentic AI features for our platform with Claude AI. He communicates clearly and is the person we go to for tricky backend problems.",
+    approved: false,
+  },
+  {
+    name: "Sajid Khan",
+    role: "",
+    company: "LaptopZone",
+    project: "LaptopZone",
+    location: "USA",
+    quote:
+      "Haziq built our e-commerce platform end to end, from checkout and inventory to order tracking and customer service tools. He understood what our US customers needed, delivered on schedule and was always quick to respond when we needed changes.",
+    approved: false,
+  },
+  {
+    name: "Tahir",
+    role: "",
+    company: "Kyrio POS",
+    project: "Kyrio POS",
+    location: "UK",
+    quote:
+      "Haziq delivered our point-of-sale system with separate access for managers, cashiers and admins, real-time sales reports and offline support for our stores. He asked the right questions and turned our requirements into a product our retail clients rely on every day.",
+    approved: false,
+  },
+];
+
 export const skillsData = [
   // Core Backend
   "Node.js",
@@ -275,9 +361,11 @@ export const skillsData = [
   "Doppler",
   "SonarQube",
 
-  // AI-Assisted Development
+  // AI Development & AI-Assisted Development
+  "Agentic AI",
+  "AI Agents",
   "Cursor AI",
-  "Claude",
+  "Claude AI",
   "GitHub Copilot",
   "ChatGPT",
   "Gemini",

@@ -3,12 +3,20 @@ import SectionHeading from "./section-heading";
 
 export const homepageFaqs = [
   {
+    q: "Who is Muhammad Haziq?",
+    a: "Muhammad Haziq is a Senior Full-Stack Software Engineer based in Dubai with 7+ years of experience building web applications, fintech platforms, payment integrations and agentic AI using Node.js, NestJS, TypeScript and React. He currently leads backend engineering at InsuranceMarket.ae, where he built insurance plan creation with providers such as GIG and Liva and is developing agentic AI capabilities with Claude AI. He builds web applications for clients in the USA, UK, UAE, Saudi Arabia and Europe.",
+  },
+  {
     q: "What kind of projects does Muhammad Haziq work on?",
-    a: "I specialize in fintech backends, payment gateway integrations (Stripe, Apple Pay, Checkout.com, TAP, Flinks), and scalable Node.js/NestJS APIs for SaaS and enterprise applications. I've shipped production systems across insurance, vehicle financing, e-commerce, and retail POS domains.",
+    a: "I build custom web applications, SaaS products, agentic AI features with Claude AI, admin dashboards and customer portals, plus the Node.js/NestJS backends and payment gateway integrations (Stripe, Apple Pay, Checkout.com, TAP, Flinks) behind them. I've shipped production systems across insurance, fintech, energy markets, vehicle financing, e-commerce and retail POS.",
+  },
+  {
+    q: "Can you build a complete web application for my business?",
+    a: "Yes. I take projects from scoping to launch: requirements, architecture, React/Next.js frontend, Node.js/NestJS backend, database design, payment integration, deployment and handover. For example, I built the full frontend of ISMO's electricity market platform in Pakistan on my own, including the public site, the Market Participant portal and admin views.",
   },
   {
     q: "Is Muhammad Haziq available for remote work?",
-    a: "Yes. I'm available for remote contract work across the US, UK, EU, UAE, and Canada. I work async-first and have a strong track record collaborating with distributed teams across EST, BST, and Gulf timezones.",
+    a: "Yes. I work remotely with clients in the USA, UK, UAE, Saudi Arabia, the wider GCC, Europe and Canada. I'm based in Dubai (GMT+4), work async-first and overlap with EST, BST and Gulf business hours.",
   },
   {
     q: "What technologies does Muhammad Haziq specialize in?",

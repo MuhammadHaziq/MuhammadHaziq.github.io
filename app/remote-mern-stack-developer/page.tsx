@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import LandingShell from "@/components/landing-shell";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/remote-mern-stack-developer",
   title: "Remote MERN Stack Developer for Hire | Muhammad Haziq",
   description:
-    "Senior MERN Stack developer available for remote work. 7+ years building MongoDB, Express, React, and Node.js applications for fintech, SaaS, and e-commerce. Global remote, async-first.",
+    "Senior MERN stack developer for remote work. 7+ years building MongoDB, Express, React and Node.js apps for fintech, SaaS and e-commerce. Async-first.",
   keywords: [
     "remote mern stack developer",
     "hire mern stack developer",
@@ -15,8 +17,7 @@ export const metadata: Metadata = {
     "react node.js developer",
     "senior mern developer",
   ],
-  alternates: { canonical: "https://muhammadhaziq.github.io/remote-mern-stack-developer" },
-};
+});
 
 const faqs = [
   { q: "What does MERN stack mean?", a: "MERN stands for MongoDB, Express.js, React, and Node.js — a full-stack JavaScript ecosystem. I have 7+ years building production applications across all four layers, plus TypeScript throughout." },
@@ -28,12 +29,12 @@ const faqs = [
 
 export default function RemoteMernStackDeveloperPage() {
   const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  const breadcrumbLd = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://muhammadhaziq.github.io" }, { "@type": "ListItem", position: 2, name: "Remote MERN Stack Developer", item: "https://muhammadhaziq.github.io/remote-mern-stack-developer" }] };
+  const breadcrumb = breadcrumbLd([{ name: "Home", path: "/" }, { name: "Remote MERN Stack Developer", path: "/remote-mern-stack-developer" }]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <LandingShell
         breadcrumb="Remote MERN Stack Developer"
         badgeText="Available for Remote MERN Work"

@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import LandingShell from "@/components/landing-shell";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/backend-architect-dubai",
   title: "Backend Software Architect in Dubai | Muhammad Haziq",
   description:
-    "Senior Backend Architect based in Dubai, UAE. Available for architecture consulting, technical advisory, fractional CTO, and senior remote contracts. Node.js, NestJS, fintech, microservices.",
+    "Dubai-based backend architect for Node.js and NestJS systems: payment flows, API design, architecture reviews and fractional CTO support for teams worldwide.",
   keywords: [
     "backend architect dubai",
     "software architect uae",
@@ -15,8 +17,7 @@ export const metadata: Metadata = {
     "software architecture consulting uae",
     "senior backend engineer dubai",
   ],
-  alternates: { canonical: "https://muhammadhaziq.github.io/backend-architect-dubai" },
-};
+});
 
 const faqs = [
   { q: "What does a backend architect do differently from a senior developer?", a: "A backend architect is responsible for system design decisions — data model design, service boundaries, scalability patterns, technology selection, and trade-off analysis. I design the system, not just implement it." },
@@ -28,12 +29,12 @@ const faqs = [
 
 export default function BackendArchitectDubaiPage() {
   const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  const breadcrumbLd = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://muhammadhaziq.github.io" }, { "@type": "ListItem", position: 2, name: "Backend Architect Dubai", item: "https://muhammadhaziq.github.io/backend-architect-dubai" }] };
+  const breadcrumb = breadcrumbLd([{ name: "Home", path: "/" }, { name: "Backend Architect Dubai", path: "/backend-architect-dubai" }]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <LandingShell
         breadcrumb="Backend Architect Dubai"
         badgeText="Based in Dubai · Available for Architecture Work"

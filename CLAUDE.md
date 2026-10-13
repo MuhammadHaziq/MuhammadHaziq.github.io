@@ -33,6 +33,10 @@ Because Next.js 13 requires `"use client"` for any component using Framer Motion
 
 The form (`components/contact.tsx`) opens a `mailto:` link in the user's default email client — there is no backend API. The recipient address comes from the `CONTACT_EMAIL` env var, falling back to a hardcoded Gmail address. In CI, this is set via the GitHub repository variable `vars.CONTACT_EMAIL` (see `.github/workflows/main.yml`).
 
+### SEO
+
+Every page builds its metadata with `pageMetadata({ path, ... })` from `lib/seo.ts`, which sets a self-referencing canonical with a trailing slash (matching `trailingSlash: true`) and page-specific Open Graph/Twitter tags. Never add a canonical `<link>` in `app/layout.tsx`, because it would apply to every page. The full `Person` JSON-LD is emitted once in the layout; other schemas reference it by `PERSON_ID`. New pages must also be added to `public/sitemap.xml`, `public/llms.txt` and the footer links in `components/footer.tsx`. Internal links should end with `/` to avoid GitHub Pages 301 redirects.
+
 ### Theming
 
 Dark/light mode is managed by `ThemeContext` (`context/theme-context.tsx`). The toggle is `components/theme-switch.tsx`. Tailwind's `dark:` variant is used throughout; the root `<html>` receives a `dark` class based on context state.
