@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 npm run dev      # Start dev server at localhost:3000
 npm run build    # Production build (outputs static files to /out)
-npm run start    # Serve the production build
-npm run lint     # Run ESLint
+npx serve out    # Preview the production build (`next start` doesn't work with output: "export")
+npm run lint     # Run ESLint (no ESLint config is committed yet; first run prompts to create one)
 ```
 
 There are no automated tests. The contact form and overall layout are verified manually in the browser.
