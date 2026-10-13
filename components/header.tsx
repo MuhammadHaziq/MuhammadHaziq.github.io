@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   const isActive = (name: string, hash: string) => {
-    if (hash.startsWith("/")) return pathname.startsWith(hash);
+    if (hash.startsWith("/")) return pathname.startsWith(hash.replace(/\/$/, ""));
     return activeSection === name;
   };
 

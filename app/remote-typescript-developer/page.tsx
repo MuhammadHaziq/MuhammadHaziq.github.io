@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import LandingShell from "@/components/landing-shell";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/remote-typescript-developer",
   title: "Senior TypeScript Developer for Remote Contract | Muhammad Haziq",
   description:
-    "Senior TypeScript developer available for remote contracts. 7+ years TypeScript across Node.js, NestJS, React, and Next.js. Strict mode, advanced generics, type-safe API design.",
+    "Senior TypeScript developer for remote contracts. Strict-mode TypeScript across NestJS backends and React/Next.js frontends, with end-to-end type safety.",
   keywords: [
     "remote typescript developer",
     "senior typescript developer",
@@ -15,8 +17,7 @@ export const metadata: Metadata = {
     "hire typescript developer",
     "senior typescript engineer remote",
   ],
-  alternates: { canonical: "https://muhammadhaziq.github.io/remote-typescript-developer" },
-};
+});
 
 const faqs = [
   { q: "Do you use TypeScript in strict mode?", a: "Yes. All my projects use TypeScript in strict mode: strictNullChecks, noImplicitAny, strictFunctionTypes. Strict mode catches a large class of runtime errors at compile time — it's not optional for production code." },
@@ -28,12 +29,12 @@ const faqs = [
 
 export default function RemoteTypeScriptDeveloperPage() {
   const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  const breadcrumbLd = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://muhammadhaziq.github.io" }, { "@type": "ListItem", position: 2, name: "Remote TypeScript Developer", item: "https://muhammadhaziq.github.io/remote-typescript-developer" }] };
+  const breadcrumb = breadcrumbLd([{ name: "Home", path: "/" }, { name: "Remote TypeScript Developer", path: "/remote-typescript-developer" }]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <LandingShell
         breadcrumb="Remote TypeScript Developer"
         badgeText="Senior TypeScript Engineer · Available Now"

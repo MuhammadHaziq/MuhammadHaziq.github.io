@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const openTo = [
+  { label: "Web App Development Projects", detail: "Fixed-scope builds, MVPs & SaaS", available: true },
   { label: "Remote Contract", detail: "full-time / part-time engagements", available: true },
   { label: "Part-Time Senior Backend", detail: "20–25 hrs/week", available: true },
   { label: "Technical Consulting", detail: "Architecture & code review", available: true },
@@ -9,7 +10,7 @@ const openTo = [
   // { label: "Full-Time Employment", detail: "Not actively seeking", available: false },
 ];
 
-const regions = ["🇺🇸 US", "🇬🇧 UK", "🇪🇺 EU", "🇨🇦 CA", "🇦🇪 UAE"];
+const regions = ["🇺🇸 US", "🇬🇧 UK", "🇦🇪 UAE", "🇸🇦 KSA", "🇪🇺 EU", "🇨🇦 CA"];
 
 export default function Availability() {
   return (
@@ -93,7 +94,7 @@ export default function Availability() {
           </div>
 
           <Link
-            href="/contact"
+            href="/contact/"
             className="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full text-sm font-semibold hover:scale-105 active:scale-100 transition-transform"
           >
             Discuss a Project

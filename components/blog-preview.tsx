@@ -16,7 +16,7 @@ export default function BlogPreview() {
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             className="group flex flex-col bg-white dark:bg-white/5 border border-black/[0.07] dark:border-white/10 rounded-2xl p-5 shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all"
           >
             <div className="flex flex-wrap gap-1 mb-3">
@@ -41,7 +41,7 @@ export default function BlogPreview() {
 
       <div className="text-center">
         <Link
-          href="/blog"
+          href="/blog/"
           className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-white/70 hover:text-gray-900 dark:hover:text-white transition-colors"
         >
           View all articles

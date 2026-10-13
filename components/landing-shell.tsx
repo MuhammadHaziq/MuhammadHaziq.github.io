@@ -122,7 +122,7 @@ export default function LandingShell({
             className="inline-flex items-center justify-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-7 py-3.5 rounded-full font-semibold hover:scale-105 active:scale-100 transition-transform">
             Book a Free 30-min Call
           </a>
-          <Link href="/contact"
+          <Link href="/contact/"
             className="inline-flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-black/10 dark:border-white/10 px-7 py-3.5 rounded-full font-semibold text-gray-900 dark:text-white hover:scale-105 active:scale-100 transition-transform">
             Send a Message
           </Link>
