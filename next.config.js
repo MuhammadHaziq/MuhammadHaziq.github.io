@@ -7,7 +7,8 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
   env: {
-    CONTACT_EMAIL: process.env.CONTACT_EMAIL
+    CONTACT_EMAIL: process.env.CONTACT_EMAIL,
+    CONTACT_WHATSAPP: process.env.CONTACT_WHATSAPP,
   },
 };
 

@@ -41,6 +41,6 @@ Every page builds its metadata with `pageMetadata({ path, ... })` from `lib/seo.
 
 Dark/light mode is managed by `ThemeContext` (`context/theme-context.tsx`). The toggle is `components/theme-switch.tsx`. Tailwind's `dark:` variant is used throughout; the root `<html>` receives a `dark` class based on context state.
 
-### Environment variable
+### Environment variables
 
-`CONTACT_EMAIL` is the only env var used. Set it in `.env.local` for local development, and as a GitHub repository variable (`vars.CONTACT_EMAIL`) for CI/CD deployments.
+`CONTACT_EMAIL` (contact form recipient) and `CONTACT_WHATSAPP` (WhatsApp number in international format, read into `WHATSAPP_NUMBER` in `lib/seo.ts`; leave it unset to hide every WhatsApp button) are exposed to client code through `env` in `next.config.js`. Set them in `.env.local` for local development, and as GitHub repository variables (`vars.CONTACT_EMAIL`, `vars.CONTACT_WHATSAPP`) for CI/CD deployments. `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` are optional build-time tokens read in `app/layout.tsx`.

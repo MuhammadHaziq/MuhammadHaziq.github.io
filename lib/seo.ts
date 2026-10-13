@@ -7,9 +7,10 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const SERVICE_ID = `${SITE_URL}/#service`;
 export const CONTACT_EMAIL_PUBLIC = "muhammadhaziq341@gmail.com";
 
-// WhatsApp number in international format, digits only, no "+" or spaces
-// (e.g. "971501234567"). Leave empty to hide every WhatsApp button.
-export const WHATSAPP_NUMBER: string = "";
+// WhatsApp number from the CONTACT_WHATSAPP env var, in international format
+// (e.g. "971501234567"). Non-digits such as "+" or spaces are stripped.
+// Leave it unset to hide every WhatsApp button.
+export const WHATSAPP_NUMBER: string = (process.env.CONTACT_WHATSAPP || "").replace(/\D/g, "");
 
 export function whatsappLink(
   message = "Hi Muhammad, I found your portfolio and would like to discuss a project."
