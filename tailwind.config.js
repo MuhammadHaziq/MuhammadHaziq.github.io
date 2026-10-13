@@ -12,16 +12,19 @@ module.exports = {
     "from-teal-100", "to-teal-300", "dark:from-teal-900/40", "dark:to-teal-700/30",
     "from-amber-100", "to-amber-300", "dark:from-amber-900/40", "dark:to-amber-700/30",
     "from-pink-100", "to-pink-300", "dark:from-pink-900/40", "dark:to-pink-700/30",
+    "from-emerald-100", "to-emerald-300", "dark:from-emerald-900/40", "dark:to-emerald-700/30",
     // Title colors
     "text-blue-900", "dark:text-blue-100",
     "text-teal-900", "dark:text-teal-100",
     "text-amber-900", "dark:text-amber-100",
     "text-pink-900", "dark:text-pink-100",
+    "text-emerald-900", "dark:text-emerald-100",
     // Domain colors
     "text-blue-700", "dark:text-blue-300",
     "text-teal-700", "dark:text-teal-300",
     "text-amber-700", "dark:text-amber-300",
     "text-pink-700", "dark:text-pink-300",
+    "text-emerald-700", "dark:text-emerald-300",
     // Tag backgrounds & text
     "bg-purple-100", "text-purple-800", "dark:bg-purple-900/40", "dark:text-purple-200",
     "bg-blue-100", "text-blue-800", "dark:bg-blue-900/40", "dark:text-blue-200",

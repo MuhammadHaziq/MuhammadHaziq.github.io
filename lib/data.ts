@@ -5,6 +5,7 @@ import {
   MdDirectionsCar,
   MdLaptop,
   MdPointOfSale,
+  MdElectricBolt,
 } from "react-icons/md";
 
 export const links = [
@@ -103,6 +104,44 @@ export const projectsData = [
       domainColor: "text-blue-700 dark:text-blue-300",
       statusText: "text-green-800 dark:text-green-300",
       iconColor: "text-blue-700 dark:text-blue-300",
+    },
+  },
+  {
+    title: "ISMO",
+    subtitle: "Independent System & Market Operator of Pakistan",
+    role: "Frontend Developer (Solo)",
+    period: "2024 – 2025",
+    location: "Pakistan",
+    domain: "ismo.gov.pk",
+    link: "https://www.ismo.gov.pk/",
+    problem:
+      "Pakistan's electricity market operator needed a public platform plus a secure portal where Market Participants could register, track their balances and compliance, and take part in Wheeling Auctions, with admins able to review every participant's details.",
+    description:
+      "Sole frontend developer for ISMO's web platform, built with React 18 and Redux. Delivered the public site (market data dashboards, auction hub, library, jobs and trainings) and the MP Login portal: multi-step market registration with document uploads and an e-signed Declaration of Conformity, and a participant dashboard showing security cover, energy and capacity balances, contracts and compliance status. Added complaints, forums and real-time notifications via Pusher. Admins can view all details of every Market Participant.",
+    outcome:
+      "Shipped the complete frontend single-handedly, covering the public site, the Market Participant portal and the admin views behind Pakistan's first Wheeling Auctions.",
+    metrics: [
+      { label: "ROLE", value: "Solo Frontend" },
+      { label: "SECTOR", value: "Energy" },
+      { label: "PORTALS", value: "Public + MP + Admin" },
+    ],
+    tags: [
+      "React 18",
+      "Redux",
+      "React Router",
+      "Formik",
+      "Yup",
+      "Bootstrap",
+      "ApexCharts",
+      "Pusher",
+    ],
+    icon: MdElectricBolt,
+    theme: {
+      gradient: "from-emerald-100 to-emerald-300 dark:from-emerald-900/40 dark:to-emerald-700/30",
+      titleColor: "text-emerald-900 dark:text-emerald-100",
+      domainColor: "text-emerald-700 dark:text-emerald-300",
+      statusText: "text-green-800 dark:text-green-300",
+      iconColor: "text-emerald-700 dark:text-emerald-300",
     },
   },
   {

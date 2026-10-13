@@ -26,6 +26,7 @@ This is my personal portfolio, built with **Next.js 13 (App Router)** and export
 | Project | Role | Market | Highlights |
 |---|---|---|---|
 | [InsuranceMarket.ae](https://insurancemarket.ae/) | Senior Backend Engineer (2023 – present) | UAE | NestJS, TypeScript, MySQL/Sequelize; Apple Pay, Checkout.com and TAP gateways; fixed race conditions in async payment flows |
+| [ISMO](https://www.ismo.gov.pk/) | Frontend Developer, solo (2024 – 2025) | Pakistan | Electricity market operator platform in React 18 + Redux; Market Participant portal with registration, e-signed declarations, balance and compliance dashboards; admin views; Pusher notifications |
 | [FinanceThat](https://financethat.ca) | Lead Developer (2021 – 2023) | Canada & US | Vehicle financing platform; Stripe subscriptions, Flinks KYC and credit reports; React/Redux |
 | [LaptopZone](https://laptopzoneusa.com) | Full-Stack Developer (2018 – 2021) | USA | E-commerce with checkout, inventory and order tracking; Node.js, Express, Oracle |
 | [Kyrio POS](https://dashboard.kyriopos.com/#/summary) | Full-Stack Developer (2018 – 2021) | UK | Offline-first retail POS with role-based access and real-time analytics; MERN stack |
