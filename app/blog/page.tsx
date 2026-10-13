@@ -1,21 +1,51 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { getAllPosts, formatDate } from "@/lib/blog";
+import {
+  PERSON_ID,
+  absoluteUrl,
+  breadcrumbLd,
+  jsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog — Muhammad Haziq | Node.js, NestJS & Fintech",
+export const metadata: Metadata = pageMetadata({
+  path: "/blog",
+  title: "Blog | Muhammad Haziq on Node.js, NestJS & Web Development",
   description:
-    "Technical writing on Node.js, NestJS, fintech backend development, payment systems, and AI-assisted engineering by Muhammad Haziq.",
-  alternates: {
-    canonical: "https://muhammadhaziq.github.io/blog",
-  },
-};
+    "Practical articles by Muhammad Haziq on Node.js, NestJS, web application architecture, payment systems, database performance and AI-assisted engineering.",
+});
 
 export default function BlogPage() {
   const posts = getAllPosts();
 
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Muhammad Haziq's Technical Blog",
+    url: absoluteUrl("/blog"),
+    author: { "@id": PERSON_ID },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: absoluteUrl(`/blog/${post.slug}`),
+      datePublished: post.date,
+      author: { "@id": PERSON_ID },
+    })),
+  };
+
   return (
     <main className="flex flex-col items-center px-4 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd([
+          blogLd,
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+          ]),
+        ])}
+      />
       {/* Header */}
       <section className="w-full max-w-[55rem] mt-8 mb-12 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -32,7 +62,7 @@ export default function BlogPage() {
         {posts.map((post) => (
           <Link
             key={post.slug}
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             className="group bg-white dark:bg-white/5 border border-black/[0.07] dark:border-white/10 rounded-2xl px-7 py-6 shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all"
           >
             {/* Tags */}

@@ -1,0 +1,32 @@
+# Muhammad Haziq
+
+> Muhammad Haziq is a Senior Full-Stack Software Engineer based in Dubai, UAE, with 7+ years of experience building web applications, fintech platforms, payment integrations and agentic AI with Claude AI, using Node.js, NestJS, TypeScript, React and Next.js. He works remotely with clients in the USA, UK, UAE, Saudi Arabia, Europe and Canada, and is available for web application projects, remote contracts and technical consulting.
+
+- Current role: Senior Software Engineer at InsuranceMarket.ae (Dubai, 2023 – present), leading backend engineering, insurance plan creation with providers such as GIG and Liva, payment integrations (Apple Pay, Checkout.com, TAP) and agentic AI development with Claude AI.
+- Contact: muhammadhaziq341@gmail.com · https://muhammadhaziq.github.io/contact/
+- LinkedIn: https://www.linkedin.com/in/muhammad-haziq/
+- GitHub: https://github.com/MuhammadHaziq
+
+## Services
+
+- [Web Application Development](https://muhammadhaziq.github.io/web-application-development/): custom web apps, SaaS and MVPs, agentic AI with Claude AI, portals and admin dashboards, Node.js/NestJS APIs, payment gateway integration, performance work.
+- [Web Application Developer for Saudi Arabia](https://muhammadhaziq.github.io/web-application-developer-saudi-arabia/)
+- [Hire a Node.js Developer in the USA](https://muhammadhaziq.github.io/hire-nodejs-developer-usa/)
+- [Hire a Node.js Developer in the UK](https://muhammadhaziq.github.io/hire-nodejs-developer-uk/)
+- [Fintech Developer in the UAE](https://muhammadhaziq.github.io/fintech-developer-uae/)
+- [Backend Architect in Dubai](https://muhammadhaziq.github.io/backend-architect-dubai/)
+
+## Projects
+
+- InsuranceMarket.ae (UAE, 2023 – present): Senior Backend Engineer. Insurance plan creation with GIG, Liva and other insurers, multi-gateway payments, race-condition fixes on a NestJS/MySQL platform, and agentic AI development with Claude AI.
+- ISMO, Independent System and Market Operator of Pakistan (2024 – 2025): Sole frontend developer. React 18 + Redux public site, Market Participant portal and admin views for Pakistan's electricity market.
+- FinanceThat (Canada & US, 2021 – 2023): Lead Developer. Vehicle financing platform with Stripe and Flinks.
+- LaptopZone (USA, 2018 – 2021): Full-Stack Developer. E-commerce platform on Node.js, Express and Oracle.
+- Kyrio POS (UK, 2018 – 2021): Full-Stack Developer. Offline-first retail point-of-sale system.
+
+## Writing
+
+- [Why Sequelize findOne with multiple includes is slow](https://muhammadhaziq.github.io/blog/sequelize-findone-slow-subquery-fix/)
+- [Resolving race conditions in NestJS payment flows](https://muhammadhaziq.github.io/blog/resolving-race-conditions-nestjs-payments/)
+- [NestJS architecture patterns for fintech](https://muhammadhaziq.github.io/blog/nestjs-architecture-patterns-fintech/)
+- [AI-assisted Node.js development workflow](https://muhammadhaziq.github.io/blog/ai-assisted-nodejs-development-workflow/)

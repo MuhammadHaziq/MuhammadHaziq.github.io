@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import LandingShell from "@/components/landing-shell";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/nestjs-developer-remote",
   title: "Senior NestJS Developer for Remote Contract | Muhammad Haziq",
   description:
-    "Senior NestJS developer available for remote contracts. Deep expertise in NestJS modules, guards, interceptors, Sequelize/TypeORM, and microservices. 5+ years production NestJS experience.",
+    "Senior NestJS developer for remote contracts: modules, guards, interceptors, Sequelize/TypeORM and microservices, with 5+ years of production NestJS.",
   keywords: [
     "nestjs developer remote",
     "senior nestjs developer",
@@ -15,8 +17,7 @@ export const metadata: Metadata = {
     "node.js nestjs engineer",
     "hire nestjs developer",
   ],
-  alternates: { canonical: "https://muhammadhaziq.github.io/nestjs-developer-remote" },
-};
+});
 
 const faqs = [
   { q: "How many years of NestJS experience do you have?", a: "I've been building production NestJS applications since 2021 — 5+ years. My current role at InsuranceMarket.ae uses NestJS as the primary backend framework for a large-scale fintech platform." },
@@ -28,12 +29,12 @@ const faqs = [
 
 export default function NestjsDeveloperRemotePage() {
   const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  const breadcrumbLd = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://muhammadhaziq.github.io" }, { "@type": "ListItem", position: 2, name: "NestJS Developer Remote", item: "https://muhammadhaziq.github.io/nestjs-developer-remote" }] };
+  const breadcrumb = breadcrumbLd([{ name: "Home", path: "/" }, { name: "NestJS Developer Remote", path: "/nestjs-developer-remote" }]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <LandingShell
         breadcrumb="NestJS Developer Remote"
         badgeText="Senior NestJS Engineer · Available Now"

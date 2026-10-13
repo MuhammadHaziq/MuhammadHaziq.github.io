@@ -1,7 +1,7 @@
 ---
 title: "Why Sequelize findOne with Multiple Includes Is Slow (and How to Fix It)"
 date: "2026-05-30"
-description: "A real production fix: replacing a slow Sequelize findOne with nested includes (which generates a subquery) with findAll using inner joins — cutting query time from seconds to milliseconds."
+description: "How replacing a Sequelize findOne with nested includes (and its hidden subquery) with findAll and inner joins cut query time from seconds to milliseconds."
 tags: ["Sequelize", "Node.js", "MySQL", "Performance", "NestJS", "Backend"]
 readTime: "7 min read"
 ---

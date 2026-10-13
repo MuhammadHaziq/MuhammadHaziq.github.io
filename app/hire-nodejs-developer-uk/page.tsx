@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { CALENDLY_URL } from "@/components/calendly-embed";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Hire Senior Node.js Developer UK | Remote Contract | Muhammad Haziq",
+export const metadata: Metadata = pageMetadata({
+  path: "/hire-nodejs-developer-uk",
+  title: "Hire a Senior Node.js Developer in the UK | Muhammad Haziq",
   description:
-    "Senior Node.js developer available for UK remote contract work. 7+ years experience including a UK retail client (Kyrio POS). BST timezone overlap. Outside IR35. NestJS, TypeScript, React.",
+    "Senior Node.js developer for UK remote contracts and projects. BST overlap, outside IR35, UK client experience (Kyrio POS). NestJS, TypeScript and React.",
   keywords: [
     "hire node.js developer uk",
     "senior node.js developer uk",
@@ -20,16 +22,10 @@ export const metadata: Metadata = {
     "senior software engineer uk remote",
     "backend architect uk",
   ],
-  alternates: {
-    canonical: "https://muhammadhaziq.github.io/hire-nodejs-developer-uk",
-  },
-  openGraph: {
-    title: "Hire Senior Node.js Developer UK | Remote Contract | Muhammad Haziq",
-    description:
-      "Senior Node.js developer for UK remote contracts. BST overlap, outside IR35, UK client experience (Kyrio POS). NestJS, TypeScript, React.",
-    url: "https://muhammadhaziq.github.io/hire-nodejs-developer-uk",
-  },
-};
+  ogTitle: "Hire a Senior Node.js Developer in the UK | Muhammad Haziq",
+  ogDescription:
+    "Senior Node.js developer for UK remote contracts. BST overlap, outside IR35, UK client experience (Kyrio POS). NestJS, TypeScript, React.",
+});
 
 const faqs = [
   {
@@ -79,16 +75,6 @@ const techStack = [
 ];
 
 export default function HireNodeJsDeveloperUKPage() {
-  const personLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Muhammad Haziq",
-    jobTitle: "Senior Node.js Developer",
-    url: "https://muhammadhaziq.github.io",
-    description:
-      "Senior Node.js developer available for UK remote contract work. BST overlap. Outside IR35. UK client experience with Kyrio POS.",
-  };
-
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -99,20 +85,15 @@ export default function HireNodeJsDeveloperUKPage() {
     })),
   };
 
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://muhammadhaziq.github.io" },
-      { "@type": "ListItem", position: 2, name: "Hire Node.js Developer UK", item: "https://muhammadhaziq.github.io/hire-nodejs-developer-uk" },
-    ],
-  };
+  const breadcrumb = breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Hire Node.js Developer UK", path: "/hire-nodejs-developer-uk" },
+  ]);
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
       <main className="flex flex-col items-center px-4 pb-24">
 
@@ -298,7 +279,7 @@ export default function HireNodeJsDeveloperUKPage() {
               Book a Free 30-min Call
             </a>
             <Link
-              href="/contact"
+              href="/contact/"
               className="inline-flex items-center justify-center gap-2 bg-white dark:bg-white/10 border border-black/10 dark:border-white/10 px-7 py-3.5 rounded-full font-semibold text-gray-900 dark:text-white hover:scale-105 active:scale-100 transition-transform"
             >
               Send a Message

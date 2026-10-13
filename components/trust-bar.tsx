@@ -5,6 +5,7 @@ import { MotionDiv } from "./Motion/MotionWrapper";
 
 const trustItems = [
   { label: "InsuranceMarket.ae", note: "UAE #1 Insurance Platform" },
+  { label: "ISMO", note: "Pakistan Electricity Market" },
   { label: "FinanceThat", note: "CA & US Fintech" },
   { label: "Stripe", note: "Payment Integration" },
   { label: "Apple Pay", note: "Payment Integration" },
@@ -21,7 +22,7 @@ export default function TrustBar() {
       transition={{ delay: 0.3, duration: 0.5 }}
     >
       <p className="text-center text-xs font-semibold tracking-widest uppercase text-gray-400 dark:text-white/30 mb-5">
-        Trusted by teams using
+        Platforms built &amp; integrations shipped
       </p>
       <div className="flex flex-wrap items-center justify-center gap-3">
         {trustItems.map((item) => (

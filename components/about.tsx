@@ -23,13 +23,21 @@ export default function About() {
         with <span className="font-medium">7+ years</span> of hands-on
         experience designing and shipping{" "}
         <span className="font-medium">
-          scalable fintech applications and payment systems
+          web applications, fintech platforms, payment systems and agentic AI
         </span>
         . Currently leading backend engineering in{" "}
-        <span className="font-medium">Dubai's insurance sector</span>, I help
-        startups and product teams deliver secure, production-grade software
-        across <span className="italic">UAE, USA, Canada, and UK</span>{" "}
-        markets.
+        <span className="font-medium">Dubai&apos;s insurance sector</span>,
+        where I built insurance plan creation with providers such as GIG and
+        Liva and now develop agentic AI capabilities with Claude AI, I help
+        startups,
+        businesses and government teams deliver secure,
+        production-grade software across{" "}
+        <span className="italic">
+          the USA, UK, UAE, Saudi Arabia, Canada and Pakistan
+        </span>
+        . Recent work includes the{" "}
+        <span className="font-medium">ISMO</span> electricity market platform
+        for Pakistan, which I built as the sole frontend developer.
       </p>
       <p className="mb-3">
         My core stack is{" "}
@@ -55,24 +63,27 @@ export default function About() {
         Papertrail.
       </p>
       <p className="mb-3">
-        I leverage{" "}
+        I build{" "}
+        <span className="font-medium">agentic AI</span> into products with{" "}
+        <span className="font-medium">Claude AI</span>: AI agents and
+        LLM-powered features that work with an application&apos;s own data and
+        APIs. I also use{" "}
         <span className="font-medium">
-          AI tools (Cursor AI, Claude, GitHub Copilot, ChatGPT, Gemini)
+          AI tools (Claude Code, Cursor AI, GitHub Copilot, ChatGPT, Gemini)
         </span>{" "}
-        to accelerate development cycles and improve code quality — shipping
-        production features faster without compromising engineering
-        standards.
+        day to day to ship production features faster without compromising
+        engineering standards.
       </p>
       <p>
-        <span className="italic">I'm currently open to</span>{" "}
+        <span className="italic">I&apos;m currently open to</span>{" "}
         <span className="font-medium">
-          remote contract and part-time engagements
-        </span>{" "}
-        — Node.js backend work, fintech projects, payment integrations, and
-        technical consulting. I work async-first and have a strong track
+          new projects and remote contract engagements
+        </span>
+        : end-to-end web application development, SaaS and MVP builds,
+        agentic AI development, admin dashboards and portals, Node.js
+        backends, payment integrations and technical consulting. I work async-first and have a strong track
         record collaborating with distributed teams across{" "}
-        <span className="font-medium">UK, EU, US, and Canadian</span>{" "}
-        timezones.
+        <span className="font-medium">US, UK, EU and Gulf</span> timezones.
       </p>
     </MotionSection>
   );

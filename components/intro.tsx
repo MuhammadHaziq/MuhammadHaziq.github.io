@@ -9,10 +9,8 @@ import { FaGithubSquare } from "react-icons/fa";
 import { BsCalendar2Check } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import profileImg from "@/public/profile_image.jpeg";
 import { MotionDiv } from "./Motion/MotionWrapper";
 import { MotionSpan } from "./Motion/MotionSpanWrapper";
-import { MotionH1 } from "./Motion/MotionH1Wrapper";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -35,11 +33,10 @@ export default function Intro() {
             }}
           >
             <Image
-              src={profileImg}
-              alt="Muhammad Haziq - Senior Node.js Developer and Fintech Specialist"
-              width="192"
-              height="192"
-              quality="95"
+              src="/profile-photo.webp"
+              alt="Muhammad Haziq, Senior Full-Stack Web Application Developer"
+              width={192}
+              height={192}
               priority={true}
               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
@@ -61,18 +58,17 @@ export default function Intro() {
         </div>
       </div>
 
-      <MotionH1
-        className="mb-6 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <span className="font-bold">Hi, I'm Muhammad Haziq.</span> A{" "}
-        <span className="font-bold">Senior Software Engineer</span> with{" "}
-        <span className="font-bold">7+ years</span> building scalable{" "}
-        <span className="font-bold">fintech applications</span> and{" "}
-        <span className="font-bold">payment integrations</span>. My stack:{" "}
+      {/* Plain h1 (no fade-in) so the main heading is visible on first paint for users and crawlers */}
+      <h1 className="mb-6 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl">
+        <span className="font-bold">Hi, I&apos;m Muhammad Haziq.</span> A{" "}
+        <span className="font-bold">Senior Full-Stack Engineer</span> with{" "}
+        <span className="font-bold">7+ years</span> building{" "}
+        <span className="font-bold">web applications</span>,{" "}
+        <span className="font-bold">fintech platforms</span>,{" "}
+        <span className="font-bold">payment integrations</span> and{" "}
+        <span className="font-bold">agentic AI</span>. My stack:{" "}
         <span className="underline">Node.js, NestJS, TypeScript, React</span>.
-      </MotionH1>
+      </h1>
 
       <MotionDiv
         className="mb-8 px-4 max-w-[50rem] mx-auto"
@@ -86,14 +82,15 @@ export default function Intro() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
-            Available for Remote Contract
+            Available for New Projects
           </span>
           <span className="text-gray-400">|</span>
+          <span className="text-sm sm:text-base">🇺🇸 USA</span>
           <span className="text-sm sm:text-base">🇬🇧 UK</span>
-          <span className="text-sm sm:text-base">🇪🇺 EU</span>
-          <span className="text-sm sm:text-base">🇺🇸 US</span>
-          <span className="text-sm sm:text-base">🇨🇦 Canada</span>
           <span className="text-sm sm:text-base">🇦🇪 UAE</span>
+          <span className="text-sm sm:text-base">🇸🇦 Saudi Arabia</span>
+          <span className="text-sm sm:text-base">🇪🇺 EU</span>
+          <span className="text-sm sm:text-base">🇨🇦 Canada</span>
         </div>
       </MotionDiv>
 
@@ -106,7 +103,7 @@ export default function Intro() {
         }}
       >
         <Link
-          href="/contact"
+          href="/contact/"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
           Book a Call{" "}
@@ -164,8 +161,16 @@ export default function Intro() {
       >
         <p>
           🟢 <span className="font-semibold">Currently accepting:</span>{" "}
-          Contract Node.js engagements · Part-time Senior Backend roles ·
-          Payment gateway integrations · Technical consulting · 20–25 hrs/week
+          Custom web application development · SaaS &amp; MVP builds · Agentic
+          AI development with Claude AI · Node.js / NestJS backends · Payment gateway
+          integrations · Technical
+          consulting ·{" "}
+          <Link
+            href="/web-application-development/"
+            className="underline font-medium hover:text-gray-900 dark:hover:text-white"
+          >
+            See services
+          </Link>
         </p>
       </MotionDiv>
     </section>
